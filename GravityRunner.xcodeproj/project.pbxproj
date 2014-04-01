@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FCB75C618EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
+		3FCB75C818EB1C8300FCCA6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */; };
+		3FCB75CA18EB1C8300FCCA6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C918EB1C8300FCCA6E /* UIKit.framework */; };
+		3FCB75CC18EB1C8300FCCA6E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75CB18EB1C8300FCCA6E /* SpriteKit.framework */; };
+		3FCB75D218EB1C8300FCCA6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75D018EB1C8300FCCA6E /* InfoPlist.strings */; };
+		3FCB75D418EB1C8300FCCA6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75D318EB1C8300FCCA6E /* main.m */; };
+		3FCB75D818EB1C8300FCCA6E /* SLCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */; };
+		3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75D918EB1C8300FCCA6E /* Main.storyboard */; };
+		3FCB75DE18EB1C8300FCCA6E /* SLCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */; };
+		3FCB75E118EB1C8300FCCA6E /* SLCMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */; };
+		3FCB75E318EB1C8300FCCA6E /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75E218EB1C8300FCCA6E /* Spaceship.png */; };
+		3FCB75E518EB1C8300FCCA6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75E418EB1C8300FCCA6E /* Images.xcassets */; };
+		3FCB75EC18EB1C8300FCCA6E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75EB18EB1C8300FCCA6E /* XCTest.framework */; };
+		3FCB75ED18EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
+		3FCB75EE18EB1C8300FCCA6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C918EB1C8300FCCA6E /* UIKit.framework */; };
+		3FCB75F618EB1C8300FCCA6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75F418EB1C8300FCCA6E /* InfoPlist.strings */; };
+		3FCB75F818EB1C8300FCCA6E /* GravityRunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75F718EB1C8300FCCA6E /* GravityRunnerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FCB75EF18EB1C8300FCCA6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FCB75BA18EB1C8300FCCA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FCB75C118EB1C8300FCCA6E;
+			remoteInfo = GravityRunner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FCB75C518EB1C8300FCCA6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3FCB75C918EB1C8300FCCA6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3FCB75CB18EB1C8300FCCA6E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		3FCB75CF18EB1C8300FCCA6E /* GravityRunner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GravityRunner-Info.plist"; sourceTree = "<group>"; };
+		3FCB75D118EB1C8300FCCA6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FCB75D318EB1C8300FCCA6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FCB75D518EB1C8300FCCA6E /* GravityRunner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GravityRunner-Prefix.pch"; sourceTree = "<group>"; };
+		3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCAppDelegate.h; sourceTree = "<group>"; };
+		3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCAppDelegate.m; sourceTree = "<group>"; };
+		3FCB75DA18EB1C8300FCCA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCViewController.h; sourceTree = "<group>"; };
+		3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCViewController.m; sourceTree = "<group>"; };
+		3FCB75DF18EB1C8300FCCA6E /* SLCMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCMyScene.h; sourceTree = "<group>"; };
+		3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCMyScene.m; sourceTree = "<group>"; };
+		3FCB75E218EB1C8300FCCA6E /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		3FCB75E418EB1C8300FCCA6E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3FCB75EA18EB1C8300FCCA6E /* GravityRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GravityRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FCB75EB18EB1C8300FCCA6E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3FCB75F318EB1C8300FCCA6E /* GravityRunnerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GravityRunnerTests-Info.plist"; sourceTree = "<group>"; };
+		3FCB75F518EB1C8300FCCA6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FCB75F718EB1C8300FCCA6E /* GravityRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GravityRunnerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FCB75BF18EB1C8300FCCA6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCB75C818EB1C8300FCCA6E /* CoreGraphics.framework in Frameworks */,
+				3FCB75CA18EB1C8300FCCA6E /* UIKit.framework in Frameworks */,
+				3FCB75CC18EB1C8300FCCA6E /* SpriteKit.framework in Frameworks */,
+				3FCB75C618EB1C8300FCCA6E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FCB75E718EB1C8300FCCA6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCB75EC18EB1C8300FCCA6E /* XCTest.framework in Frameworks */,
+				3FCB75EE18EB1C8300FCCA6E /* UIKit.framework in Frameworks */,
+				3FCB75ED18EB1C8300FCCA6E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FCB75B918EB1C8300FCCA6E = {
+			isa = PBXGroup;
+			children = (
+				3FCB75CD18EB1C8300FCCA6E /* GravityRunner */,
+				3FCB75F118EB1C8300FCCA6E /* GravityRunnerTests */,
+				3FCB75C418EB1C8300FCCA6E /* Frameworks */,
+				3FCB75C318EB1C8300FCCA6E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FCB75C318EB1C8300FCCA6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */,
+				3FCB75EA18EB1C8300FCCA6E /* GravityRunnerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FCB75C418EB1C8300FCCA6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75C518EB1C8300FCCA6E /* Foundation.framework */,
+				3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */,
+				3FCB75C918EB1C8300FCCA6E /* UIKit.framework */,
+				3FCB75CB18EB1C8300FCCA6E /* SpriteKit.framework */,
+				3FCB75EB18EB1C8300FCCA6E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FCB75CD18EB1C8300FCCA6E /* GravityRunner */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
+				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
+				3FCB75D918EB1C8300FCCA6E /* Main.storyboard */,
+				3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */,
+				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
+				3FCB75DF18EB1C8300FCCA6E /* SLCMyScene.h */,
+				3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */,
+				3FCB75E218EB1C8300FCCA6E /* Spaceship.png */,
+				3FCB75E418EB1C8300FCCA6E /* Images.xcassets */,
+				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
+			);
+			path = GravityRunner;
+			sourceTree = "<group>";
+		};
+		3FCB75CE18EB1C8300FCCA6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75CF18EB1C8300FCCA6E /* GravityRunner-Info.plist */,
+				3FCB75D018EB1C8300FCCA6E /* InfoPlist.strings */,
+				3FCB75D318EB1C8300FCCA6E /* main.m */,
+				3FCB75D518EB1C8300FCCA6E /* GravityRunner-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FCB75F118EB1C8300FCCA6E /* GravityRunnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75F718EB1C8300FCCA6E /* GravityRunnerTests.m */,
+				3FCB75F218EB1C8300FCCA6E /* Supporting Files */,
+			);
+			path = GravityRunnerTests;
+			sourceTree = "<group>";
+		};
+		3FCB75F218EB1C8300FCCA6E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75F318EB1C8300FCCA6E /* GravityRunnerTests-Info.plist */,
+				3FCB75F418EB1C8300FCCA6E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FCB75C118EB1C8300FCCA6E /* GravityRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FCB75FB18EB1C8300FCCA6E /* Build configuration list for PBXNativeTarget "GravityRunner" */;
+			buildPhases = (
+				3FCB75BE18EB1C8300FCCA6E /* Sources */,
+				3FCB75BF18EB1C8300FCCA6E /* Frameworks */,
+				3FCB75C018EB1C8300FCCA6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GravityRunner;
+			productName = GravityRunner;
+			productReference = 3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FCB75E918EB1C8300FCCA6E /* GravityRunnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FCB75FE18EB1C8300FCCA6E /* Build configuration list for PBXNativeTarget "GravityRunnerTests" */;
+			buildPhases = (
+				3FCB75E618EB1C8300FCCA6E /* Sources */,
+				3FCB75E718EB1C8300FCCA6E /* Frameworks */,
+				3FCB75E818EB1C8300FCCA6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FCB75F018EB1C8300FCCA6E /* PBXTargetDependency */,
+			);
+			name = GravityRunnerTests;
+			productName = GravityRunnerTests;
+			productReference = 3FCB75EA18EB1C8300FCCA6E /* GravityRunnerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FCB75BA18EB1C8300FCCA6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SLC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = edu.stlawrencetech;
+				TargetAttributes = {
+					3FCB75E918EB1C8300FCCA6E = {
+						TestTargetID = 3FCB75C118EB1C8300FCCA6E;
+					};
+				};
+			};
+			buildConfigurationList = 3FCB75BD18EB1C8300FCCA6E /* Build configuration list for PBXProject "GravityRunner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FCB75B918EB1C8300FCCA6E;
+			productRefGroup = 3FCB75C318EB1C8300FCCA6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FCB75C118EB1C8300FCCA6E /* GravityRunner */,
+				3FCB75E918EB1C8300FCCA6E /* GravityRunnerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FCB75C018EB1C8300FCCA6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCB75D218EB1C8300FCCA6E /* InfoPlist.strings in Resources */,
+				3FCB75E518EB1C8300FCCA6E /* Images.xcassets in Resources */,
+				3FCB75E318EB1C8300FCCA6E /* Spaceship.png in Resources */,
+				3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FCB75E818EB1C8300FCCA6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCB75F618EB1C8300FCCA6E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FCB75BE18EB1C8300FCCA6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCB75D418EB1C8300FCCA6E /* main.m in Sources */,
+				3FCB75E118EB1C8300FCCA6E /* SLCMyScene.m in Sources */,
+				3FCB75D818EB1C8300FCCA6E /* SLCAppDelegate.m in Sources */,
+				3FCB75DE18EB1C8300FCCA6E /* SLCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FCB75E618EB1C8300FCCA6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FCB75F818EB1C8300FCCA6E /* GravityRunnerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FCB75F018EB1C8300FCCA6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FCB75C118EB1C8300FCCA6E /* GravityRunner */;
+			targetProxy = 3FCB75EF18EB1C8300FCCA6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3FCB75D018EB1C8300FCCA6E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FCB75D118EB1C8300FCCA6E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3FCB75D918EB1C8300FCCA6E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FCB75DA18EB1C8300FCCA6E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FCB75F418EB1C8300FCCA6E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FCB75F518EB1C8300FCCA6E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FCB75F918EB1C8300FCCA6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3FCB75FA18EB1C8300FCCA6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FCB75FC18EB1C8300FCCA6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GravityRunner/GravityRunner-Prefix.pch";
+				INFOPLIST_FILE = "GravityRunner/GravityRunner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3FCB75FD18EB1C8300FCCA6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GravityRunner/GravityRunner-Prefix.pch";
+				INFOPLIST_FILE = "GravityRunner/GravityRunner-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3FCB75FF18EB1C8300FCCA6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GravityRunner.app/GravityRunner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GravityRunner/GravityRunner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GravityRunnerTests/GravityRunnerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3FCB760018EB1C8300FCCA6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GravityRunner.app/GravityRunner";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GravityRunner/GravityRunner-Prefix.pch";
+				INFOPLIST_FILE = "GravityRunnerTests/GravityRunnerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FCB75BD18EB1C8300FCCA6E /* Build configuration list for PBXProject "GravityRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FCB75F918EB1C8300FCCA6E /* Debug */,
+				3FCB75FA18EB1C8300FCCA6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FCB75FB18EB1C8300FCCA6E /* Build configuration list for PBXNativeTarget "GravityRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FCB75FC18EB1C8300FCCA6E /* Debug */,
+				3FCB75FD18EB1C8300FCCA6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3FCB75FE18EB1C8300FCCA6E /* Build configuration list for PBXNativeTarget "GravityRunnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FCB75FF18EB1C8300FCCA6E /* Debug */,
+				3FCB760018EB1C8300FCCA6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FCB75BA18EB1C8300FCCA6E /* Project object */;
+}
