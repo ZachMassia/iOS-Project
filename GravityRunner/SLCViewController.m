@@ -1,9 +1,9 @@
 //
-//  SLCViewController.m
-//  GravityRunner
+//  ViewController.m
+//  SuperKoalio
 //
-//  Created by Student on 2014-04-01.
-//  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
+//  Created by Jake Gundersen on 12/27/13.
+//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
 //
 
 #import "SLCViewController.h"
@@ -11,10 +11,10 @@
 
 @implementation SLCViewController
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-
+    [super viewDidAppear:animated];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -35,11 +35,7 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (void)didReceiveMemoryWarning
