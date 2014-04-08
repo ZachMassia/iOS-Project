@@ -1,9 +1,9 @@
 //
 //  Player.m
-//  SuperKoalio
+//  GravityRunner
 //
-//  Created by Jake Gundersen on 12/27/13.
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
+//  Created by Student on 2014-04-01.
+//  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
 //
 
 #import "Player.h"
@@ -11,13 +11,21 @@
 
 @implementation Player
 - (instancetype)initWithImageNamed:(NSString *)name {
-    if (self == [super initWithImageNamed:name]) {
+    if (self == [super init]) {
         self.velocity = CGPointMake(0.0, 0.0);
     }
+    
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+    [self parseAnimationJSONFromData:[NSData dataWithContentsOfFile:fullPath]];
     
     self.gravDir = 1;
     
     return self;
+}
+
+- (void)parseAnimationJSONFromData:(NSData *)data
+{
+    NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 }
 
 - (void)update:(NSTimeInterval)delta {

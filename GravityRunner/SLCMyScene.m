@@ -1,10 +1,9 @@
 //
 //  SLCMyScene.m
-//  SuperKoalio
+//  GravityRunner
 //
-//  Created by Jake Gundersen on 12/27/13.
-//  Copyright (c) 2013 Razeware, LLC. All rights reserved.
-//
+//  Created by Student on 2014-04-01.
+//  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
 
 #import "SKTUtils.h"
 #import "SLCMyScene.h"
@@ -23,18 +22,19 @@
 
 @implementation SLCMyScene
 
+
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         self.userInteractionEnabled = YES;
         
-        self.backgroundColor = [SKColor colorWithRed:.4 green:.4 blue:.95 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
         
         self.map = [JSTileMap mapNamed:@"level1.tmx"];
         [self addChild:self.map];
         
         self.walls = [self.map layerNamed:@"walls"];
-        
-        self.player = [[Player alloc] initWithImageNamed:@"koalio_stand"];
+
+        self.player = [[Player alloc] initWithImageNamed:@"p1_walk"];
         self.player.position = CGPointMake(150, 300);
         self.player.velocity = CGPointMake(100, 0);
         self.player.zPosition = 15;
