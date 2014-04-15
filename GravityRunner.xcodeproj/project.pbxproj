@@ -38,9 +38,8 @@
 		3FCB763118EB1FA500FCCA6E /* level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB762C18EB1FA500FCCA6E /* level1.tmx */; };
 		3FCB763218EB1FA500FCCA6E /* terrain_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB762D18EB1FA500FCCA6E /* terrain_tiles.png */; };
 		3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */; };
-		3FCB763718EC9F9B00FCCA6E /* p1_walk.json in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB763418EC9F9B00FCCA6E /* p1_walk.json */; };
-		3FCB763818EC9F9B00FCCA6E /* p1_walk.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB763518EC9F9B00FCCA6E /* p1_walk.png */; };
-		3FCB763918EC9F9B00FCCA6E /* p1_walk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB763618EC9F9B00FCCA6E /* p1_walk@2x.png */; };
+		92139F4918F8D6C000EF3680 /* SLCSpriteSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */; };
+		9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9222494F18FCFCB7003B64F2 /* walk_anim.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,9 +102,9 @@
 		3FCB762C18EB1FA500FCCA6E /* level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level1.tmx; sourceTree = "<group>"; };
 		3FCB762D18EB1FA500FCCA6E /* terrain_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terrain_tiles.png; sourceTree = "<group>"; };
 		3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "terrain_tiles@2x.png"; sourceTree = "<group>"; };
-		3FCB763418EC9F9B00FCCA6E /* p1_walk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = p1_walk.json; sourceTree = "<group>"; };
-		3FCB763518EC9F9B00FCCA6E /* p1_walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p1_walk.png; sourceTree = "<group>"; };
-		3FCB763618EC9F9B00FCCA6E /* p1_walk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p1_walk@2x.png"; sourceTree = "<group>"; };
+		92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCSpriteSheet.h; sourceTree = "<group>"; };
+		92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCSpriteSheet.m; sourceTree = "<group>"; };
+		9222494F18FCFCB7003B64F2 /* walk_anim.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = walk_anim.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,18 +169,14 @@
 			isa = PBXGroup;
 			children = (
 				3FCB762718EB1FA500FCCA6E /* Resources */,
-				3FCB760118EB1D7A00FCCA6E /* JSTileMap */,
-				3FCB760818EB1DD600FCCA6E /* SKTUtils */,
-				3FCB75D918EB1C8300FCCA6E /* Main.storyboard */,
-				3FCB75DF18EB1C8300FCCA6E /* SLCMyScene.h */,
 				3FCB762418EB1E4E00FCCA6E /* Player.h */,
 				3FCB762518EB1E4E00FCCA6E /* Player.m */,
-				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
-				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
 				3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */,
 				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
+				3FCB75DF18EB1C8300FCCA6E /* SLCMyScene.h */,
 				3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */,
-				3FCB75E418EB1C8300FCCA6E /* Images.xcassets */,
+				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
+				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
 				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
 			);
 			path = GravityRunner;
@@ -190,6 +185,12 @@
 		3FCB75CE18EB1C8300FCCA6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
+				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
+				3FCB760818EB1DD600FCCA6E /* SKTUtils */,
+				3FCB760118EB1D7A00FCCA6E /* JSTileMap */,
+				3FCB75E418EB1C8300FCCA6E /* Images.xcassets */,
+				3FCB75D918EB1C8300FCCA6E /* Main.storyboard */,
 				3FCB75CF18EB1C8300FCCA6E /* GravityRunner-Info.plist */,
 				3FCB75D018EB1C8300FCCA6E /* InfoPlist.strings */,
 				3FCB75D318EB1C8300FCCA6E /* main.m */,
@@ -263,9 +264,7 @@
 		3FCB762818EB1FA500FCCA6E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3FCB763418EC9F9B00FCCA6E /* p1_walk.json */,
-				3FCB763518EC9F9B00FCCA6E /* p1_walk.png */,
-				3FCB763618EC9F9B00FCCA6E /* p1_walk@2x.png */,
+				9222494F18FCFCB7003B64F2 /* walk_anim.atlas */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -358,12 +357,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCB75D218EB1C8300FCCA6E /* InfoPlist.strings in Resources */,
-				3FCB763718EC9F9B00FCCA6E /* p1_walk.json in Resources */,
 				3FCB75E518EB1C8300FCCA6E /* Images.xcassets in Resources */,
 				3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */,
-				3FCB763918EC9F9B00FCCA6E /* p1_walk@2x.png in Resources */,
 				3FCB763218EB1FA500FCCA6E /* terrain_tiles.png in Resources */,
-				3FCB763818EC9F9B00FCCA6E /* p1_walk.png in Resources */,
+				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
 				3FCB763118EB1FA500FCCA6E /* level1.tmx in Resources */,
 			);
@@ -397,6 +394,7 @@
 				3FCB762018EB1DD600FCCA6E /* SKTEffects.m in Sources */,
 				3FCB761E18EB1DD600FCCA6E /* SKNode+SKTExtras.m in Sources */,
 				3FCB75D818EB1C8300FCCA6E /* SLCAppDelegate.m in Sources */,
+				92139F4918F8D6C000EF3680 /* SLCSpriteSheet.m in Sources */,
 				3FCB760718EB1DAD00FCCA6E /* LFCGzipUtility.m in Sources */,
 				3FCB75DE18EB1C8300FCCA6E /* SLCViewController.m in Sources */,
 			);

@@ -9,50 +9,31 @@
 #import "Player.h"
 #import "SKTUtils.h"
 
-@implementation Player
-- (instancetype)initWithImageNamed:(NSString *)name {
-    if (self == [super init]) {
-        self.velocity = CGPointMake(0.0, 0.0);
-    }
-    
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
-    [self parseAnimationJSONFromData:[NSData dataWithContentsOfFile:fullPath]];
-    
-    self.gravDir = 1;
-    
-    return self;
-}
+@interface Player()
+@property (nonatomic, strong) NSMutableArray *playerWalkTextures;
+@end
 
-- (void)parseAnimationJSONFromData:(NSData *)data
-{
-    NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+@implementation Player
+- (instancetype)init {
+    // Load the sprite sheet first so that we can init the SKSpriteNode with the first animation frame.
+    SLCSpriteSheet *spriteSheet = [[SLCSpriteSheet alloc] initWithAtlasNamed:@"walk_anim"];
+
+    if (spriteSheet && self == [super initWithTexture:spriteSheet.animationTextures[0]]) {
+        self.gravDir = 1;
+        self.velocity = CGPointMake(0.0, 0.0);
+        self.spriteSheet = spriteSheet;
+        [self runAction:[self.spriteSheet generateAnimationWithTime:0.1f]
+                withKey:@"player_walk_animation"];
+    }
+
+    return self;
 }
 
 - (void)update:(NSTimeInterval)delta {
     CGPoint gravity = CGPointMake(0.0, -450.0);
-    
     CGPoint gravityStep = CGPointMultiplyScalar(gravity, delta * self.gravDir);
-    
     self.velocity = CGPointAdd(self.velocity, gravityStep);
-    /*
-    CGPoint forwardMove = CGPointMake(800.0, 0.0);
-    CGPoint forwardMoveStep = CGPointMultiplyScalar(forwardMove, delta);
     
-
-
-    static const CGPoint jumpForce = { 0.0, 310.0 };
-    static const float jumpCutoff = 150.0;
-    
-    if (self.jumpIntent && self.onGround) {
-        self.velocity = CGPointAdd(self.velocity, jumpForce);
-    } else if (!self.jumpIntent && self.velocity.y > jumpCutoff) {
-        self.velocity = CGPointMake(self.velocity.x, jumpCutoff);
-    }
-    
-    if (self.moveForwardIntent) {
-        self.velocity = CGPointAdd(self.velocity, forwardMoveStep);
-    }
-    */
     static const CGPoint minMovement = { 0.0, -450.0 };
     static const CGPoint maxMovement = { 120.0, 450.0 };
     
@@ -65,9 +46,28 @@
 }
 
 - (CGRect)collisionBoundingBox {
-    CGRect boundingbox = CGRectInset(self.frame, 2, 0);
+    CGRect boundingbox = CGRectInset(self.frame, 0, 25); // TODO: Fix height glitch
     CGPoint diff = CGPointSubtract(self.desiredPosition, self.position);
     return CGRectOffset(boundingbox, diff.x, diff.y);
+}
+
+- (NSMutableArray *)playerWalkTextures {
+    if (!_playerWalkTextures) {
+        _playerWalkTextures = [NSMutableArray array];
+        
+        // Load the texture atlas
+        SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"p1_walk"];
+        NSInteger frameCount = atlas.textureNames.count / 2;
+
+        for (int i = 1; i <= frameCount; i++) {
+            // Grab the current frame from the atlas.
+            SKTexture *frame = [atlas textureNamed:[NSString stringWithFormat:i > 9 ? @"%@_%d" : @"%@_0%d",
+                                                    self.name, i]];
+            
+            [_playerWalkTextures addObject:frame];
+        }
+    }
+    return _playerWalkTextures;
 }
 
 @end

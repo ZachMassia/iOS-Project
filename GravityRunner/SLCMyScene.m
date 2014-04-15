@@ -34,7 +34,7 @@
         
         self.walls = [self.map layerNamed:@"walls"];
 
-        self.player = [[Player alloc] initWithImageNamed:@"p1_walk"];
+        self.player = [[Player alloc] init];
         self.player.position = CGPointMake(150, 300);
         self.player.velocity = CGPointMake(100, 0);
         self.player.zPosition = 15;
@@ -43,6 +43,7 @@
     }
     return self;
 }
+
 
 - (void)update:(NSTimeInterval)currentTime
 {
@@ -58,8 +59,11 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.gravDir *= -1;
-    self.player.velocity = CGPointMake(self.player.velocity.x, self.player.velocity.y * -1);
+    if (self.player.onGround) {
+        self.gravDir *= -1;
+        self.player.velocity = CGPointMake(self.player.velocity.x, self.player.velocity.y * -1);
+        [self.player runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.5f]];
+    }
 }
 
 - (void)setViewpointCenter:(CGPoint)position {
@@ -119,6 +123,7 @@
                     case 1: // Above
                         player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y - intersection.size.height);
                         //player.velocity = CGPointMake(player.velocity.x, 0.0);
+                        player.onGround = YES;
                         break;
                         
                     case 3: // Left
