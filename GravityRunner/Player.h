@@ -17,4 +17,9 @@
 
 - (void)update:(NSTimeInterval)delta;
 - (CGRect)collisionBoundingBox;
+
+/**
+ *  Flip the player, reversing the walk animation.
+ */
+- (void)flip;
 @end

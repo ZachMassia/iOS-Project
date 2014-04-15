@@ -61,8 +61,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if (self.player.onGround) {
         self.gravDir *= -1;
-        self.player.velocity = CGPointMake(self.player.velocity.x, self.player.velocity.y * -1);
-        [self.player runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.5f]];
+        [self.player flip];
     }
 }
 

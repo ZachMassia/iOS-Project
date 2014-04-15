@@ -11,6 +11,11 @@
 
 @interface Player()
 @property (nonatomic, strong) NSMutableArray *playerWalkTextures;
+
+@property (nonatomic, strong) SKAction *forwardWalk;
+@property (nonatomic, strong) SKAction *backwardWalk;
+@property (nonatomic, strong) SKAction *flipAnimation;
+@property (nonatomic, assign) BOOL upsideDown;
 @end
 
 @implementation Player
@@ -22,8 +27,13 @@
         self.gravDir = 1;
         self.velocity = CGPointMake(0.0, 0.0);
         self.spriteSheet = spriteSheet;
-        [self runAction:[self.spriteSheet generateAnimationWithTime:0.1f]
-                withKey:@"player_walk_animation"];
+        self.upsideDown = NO;
+
+        self.forwardWalk = [self.spriteSheet generateAnimationWithTime:0.1f];
+        self.backwardWalk = [self.forwardWalk reversedAction];
+        self.flipAnimation = [SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.5];
+
+        [self runAction:self.forwardWalk withKey:@"walk_animation"];
     }
 
     return self;
@@ -49,6 +59,21 @@
     CGRect boundingbox = CGRectInset(self.frame, 0, 25); // TODO: Fix height glitch
     CGPoint diff = CGPointSubtract(self.desiredPosition, self.position);
     return CGRectOffset(boundingbox, diff.x, diff.y);
+}
+
+- (void)flip {
+    // TODO: Mirror the character (he's facing the wrong way)
+    [self runAction:self.flipAnimation withKey:@"flip_animation"];
+    [self removeActionForKey:@"walk_animation"];
+    self.velocity = CGPointMake(self.velocity.x, self.velocity.y * -1);
+
+    if (self.upsideDown) {
+        self.upsideDown = NO;
+        [self runAction:self.forwardWalk withKey:@"walk_animation"];
+    } else {
+        self.upsideDown = YES;
+       [self runAction:self.backwardWalk withKey:@"walk_animation"];
+    }
 }
 
 - (NSMutableArray *)playerWalkTextures {
