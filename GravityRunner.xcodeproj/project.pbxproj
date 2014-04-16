@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4DF18FF1104001A57D7 /* Music01.caf */; };
+		3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E118FF120A001A57D7 /* button-fwd.caf */; };
+		3F0BD4E618FF120A001A57D7 /* buttonback.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E218FF120A001A57D7 /* buttonback.caf */; };
+		3F0BD4E718FF120A001A57D7 /* grav-down.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E318FF120A001A57D7 /* grav-down.caf */; };
+		3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E418FF120A001A57D7 /* grav-up.caf */; };
 		3FCB75C618EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
 		3FCB75C818EB1C8300FCCA6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */; };
 		3FCB75CA18EB1C8300FCCA6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C918EB1C8300FCCA6E /* UIKit.framework */; };
@@ -53,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F0BD4DF18FF1104001A57D7 /* Music01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music01.caf; sourceTree = "<group>"; };
+		3F0BD4E118FF120A001A57D7 /* button-fwd.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "button-fwd.caf"; sourceTree = "<group>"; };
+		3F0BD4E218FF120A001A57D7 /* buttonback.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = buttonback.caf; sourceTree = "<group>"; };
+		3F0BD4E318FF120A001A57D7 /* grav-down.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-down.caf"; sourceTree = "<group>"; };
+		3F0BD4E418FF120A001A57D7 /* grav-up.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-up.caf"; sourceTree = "<group>"; };
 		3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCB75C518EB1C8300FCCA6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +143,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0BD4D418FF09C0001A57D7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3F0BD4E118FF120A001A57D7 /* button-fwd.caf */,
+				3F0BD4E218FF120A001A57D7 /* buttonback.caf */,
+				3F0BD4E318FF120A001A57D7 /* grav-down.caf */,
+				3F0BD4E418FF120A001A57D7 /* grav-up.caf */,
+				3F0BD4DF18FF1104001A57D7 /* Music01.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		3FCB75B918EB1C8300FCCA6E = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +277,7 @@
 		3FCB762718EB1FA500FCCA6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3F0BD4D418FF09C0001A57D7 /* Sounds */,
 				3FCB762818EB1FA500FCCA6E /* Images */,
 				3FCB762B18EB1FA500FCCA6E /* TMX */,
 			);
@@ -360,9 +383,14 @@
 				3FCB75E518EB1C8300FCCA6E /* Images.xcassets in Resources */,
 				3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */,
 				3FCB763218EB1FA500FCCA6E /* terrain_tiles.png in Resources */,
+				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
+				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
 				3FCB763118EB1FA500FCCA6E /* level1.tmx in Resources */,
+				3F0BD4E718FF120A001A57D7 /* grav-down.caf in Resources */,
+				3F0BD4E618FF120A001A57D7 /* buttonback.caf in Resources */,
+				3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
