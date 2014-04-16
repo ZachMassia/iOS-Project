@@ -33,6 +33,9 @@
         self.backwardWalk = [self.forwardWalk reversedAction];
         self.flipAnimation = [SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.5];
 
+        self.xScale = 0.5;
+        self.yScale = 0.5;
+
         [self runAction:self.forwardWalk withKey:@"walk_animation"];
     }
 
@@ -56,7 +59,7 @@
 }
 
 - (CGRect)collisionBoundingBox {
-    CGRect boundingbox = CGRectInset(self.frame, 0, 25); // TODO: Fix height glitch
+    CGRect boundingbox = CGRectInset(self.frame, 0, 0); // TODO: Fix height glitch
     CGPoint diff = CGPointSubtract(self.desiredPosition, self.position);
     return CGRectOffset(boundingbox, diff.x, diff.y);
 }
@@ -70,9 +73,11 @@
     if (self.upsideDown) {
         self.upsideDown = NO;
         [self runAction:self.forwardWalk withKey:@"walk_animation"];
+        self.xScale = 0.5;
     } else {
         self.upsideDown = YES;
        [self runAction:self.backwardWalk withKey:@"walk_animation"];
+        self.xScale = -0.5;
     }
 }
 
