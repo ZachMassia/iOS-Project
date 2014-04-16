@@ -172,7 +172,7 @@
 
         // Load all the sounds as actions and use the file names without extensions as keys.
         for (NSString *sound in sounds) {
-            SKAction *action = [SKAction playSoundFileNamed:sound waitForCompletion:NO];
+            SKAction *action = [SKAction playSoundFileNamed:sound waitForCompletion:YES];
             NSString *name = [sound stringByDeletingPathExtension];
             [temp setValue:action forKey:name];
         }
