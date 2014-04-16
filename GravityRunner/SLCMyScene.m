@@ -14,6 +14,7 @@
 @property (nonatomic, strong) JSTileMap *map;
 @property (nonatomic, strong) Player    *player;
 @property (nonatomic, strong) TMXLayer  *walls;
+@property (nonatomic, strong) NSDictionary *Sounds;
 
 @property (nonatomic, assign) NSTimeInterval previousUpdateTime;
 
@@ -40,6 +41,7 @@
         self.player.zPosition = 15;
         [self.map addChild:self.player];
         self.gravDir = 1;
+        [self runAction:self.Sounds[@"BG_Music"]];
     }
     return self;
 }
@@ -161,6 +163,21 @@
         }
     }
     player.position = player.desiredPosition;
+}
+
+- (NSDictionary *)Sounds{
+    if(!_Sounds){
+        NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+        [temp setValue:[SKAction playSoundFileNamed:@"Music01.caf" waitForCompletion:YES] forKey:@"BG_Music"];
+        [temp setValue:[SKAction playSoundFileNamed:@"button-fwd.caf" waitForCompletion:NO] forKey:@"buttonfwd"];
+        [temp setValue:[SKAction playSoundFileNamed:@"button-back.caf" waitForCompletion:NO] forKey:@"buttondown"];
+        [temp setValue:[SKAction playSoundFileNamed:@"grav-down.caf" waitForCompletion:NO] forKey:@"gravdown"];
+        [temp setValue:[SKAction playSoundFileNamed:@"grav-up.caf" waitForCompletion:NO] forKey:@"gravup"];
+        
+        
+        _Sounds = [NSDictionary dictionaryWithDictionary:temp];
+    }
+    return _Sounds;
 }
 
 @end
