@@ -14,7 +14,7 @@
 @property (nonatomic, strong) JSTileMap *map;
 @property (nonatomic, strong) Player    *player;
 @property (nonatomic, strong) TMXLayer  *walls;
-@property (nonatomic, strong) NSDictionary *Sounds;
+@property (nonatomic, strong) NSDictionary *sounds;
 
 @property (nonatomic, assign) NSTimeInterval previousUpdateTime;
 
@@ -41,7 +41,7 @@
         self.player.zPosition = 15;
         [self.map addChild:self.player];
         self.gravDir = 1;
-        [self runAction:self.Sounds[@"BG_Music"]];
+        [self runAction:self.sounds[@"Music01"]];
     }
     return self;
 }
@@ -165,19 +165,21 @@
     player.position = player.desiredPosition;
 }
 
-- (NSDictionary *)Sounds{
-    if(!_Sounds){
+- (NSDictionary *)sounds{
+    if(!_sounds){
         NSMutableDictionary *temp = [NSMutableDictionary dictionary];
-        [temp setValue:[SKAction playSoundFileNamed:@"Music01.caf" waitForCompletion:YES] forKey:@"BG_Music"];
-        [temp setValue:[SKAction playSoundFileNamed:@"button-fwd.caf" waitForCompletion:NO] forKey:@"buttonfwd"];
-        [temp setValue:[SKAction playSoundFileNamed:@"button-back.caf" waitForCompletion:NO] forKey:@"buttondown"];
-        [temp setValue:[SKAction playSoundFileNamed:@"grav-down.caf" waitForCompletion:NO] forKey:@"gravdown"];
-        [temp setValue:[SKAction playSoundFileNamed:@"grav-up.caf" waitForCompletion:NO] forKey:@"gravup"];
-        
-        
-        _Sounds = [NSDictionary dictionaryWithDictionary:temp];
+        NSArray *sounds = @[@"Music01.caf", @"button-fwd.caf", @"button-back.caf", @"grav-down.caf", @"grav-up.caf"];
+
+        // Load all the sounds as actions and use the file names without extensions as keys.
+        for (NSString *sound in sounds) {
+            SKAction *action = [SKAction playSoundFileNamed:sound waitForCompletion:NO];
+            NSString *name = [sound stringByDeletingPathExtension];
+            [temp setValue:action forKey:name];
+        }
+        _sounds = [NSDictionary dictionaryWithDictionary:temp];
     }
-    return _Sounds;
+
+    return _sounds;
 }
 
 @end
