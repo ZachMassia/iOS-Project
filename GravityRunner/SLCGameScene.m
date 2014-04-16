@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
 
 #import "SKTUtils.h"
-#import "SLCMyScene.h"
+#import "SLCGameScene.h"
 #import "JSTileMap.h"
 #import "Player.h"
 
-@interface SLCMyScene()
+@interface SLCGameScene()
 @property (nonatomic, strong) JSTileMap *map;
 @property (nonatomic, strong) Player    *player;
 @property (nonatomic, strong) TMXLayer  *walls;
@@ -21,16 +21,16 @@
 @property (nonatomic, assign) NSInteger gravDir;
 @end
 
-@implementation SLCMyScene
+@implementation SLCGameScene
 
 
-- (id)initWithSize:(CGSize)size {
+- (id)initWithSize:(CGSize)size levelNumber:(NSUInteger)level {
     if (self = [super initWithSize:size]) {
         self.userInteractionEnabled = YES;
         
         self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
         
-        self.map = [JSTileMap mapNamed:@"level1.tmx"];
+        self.map = [self loadLevel:level];
         [self addChild:self.map];
         
         self.walls = [self.map layerNamed:@"walls"];
@@ -180,6 +180,10 @@
     }
 
     return _sounds;
+}
+
+- (JSTileMap *)loadLevel:(NSUInteger)level {
+    return [JSTileMap mapNamed:[NSString stringWithFormat:@"level%i.tmx", level]];
 }
 
 @end

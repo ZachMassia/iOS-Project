@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SLCMyScene : SKScene
-
+@interface SLCGameScene : SKScene
+- (id)initWithSize:(CGSize)size levelNumber:(NSUInteger)level;
 @end

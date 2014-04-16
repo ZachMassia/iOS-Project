@@ -21,7 +21,7 @@
 		3FCB75D818EB1C8300FCCA6E /* SLCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */; };
 		3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75D918EB1C8300FCCA6E /* Main.storyboard */; };
 		3FCB75DE18EB1C8300FCCA6E /* SLCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */; };
-		3FCB75E118EB1C8300FCCA6E /* SLCMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */; };
+		3FCB75E118EB1C8300FCCA6E /* SLCGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */; };
 		3FCB75E518EB1C8300FCCA6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB75E418EB1C8300FCCA6E /* Images.xcassets */; };
 		3FCB75EC18EB1C8300FCCA6E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75EB18EB1C8300FCCA6E /* XCTest.framework */; };
 		3FCB75ED18EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
@@ -77,8 +77,8 @@
 		3FCB75DA18EB1C8300FCCA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCViewController.h; sourceTree = "<group>"; };
 		3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCViewController.m; sourceTree = "<group>"; };
-		3FCB75DF18EB1C8300FCCA6E /* SLCMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCMyScene.h; sourceTree = "<group>"; };
-		3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCMyScene.m; sourceTree = "<group>"; };
+		3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCGameScene.h; sourceTree = "<group>"; };
+		3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLCGameScene.m; sourceTree = "<group>"; };
 		3FCB75E418EB1C8300FCCA6E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3FCB75EA18EB1C8300FCCA6E /* GravityRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GravityRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCB75EB18EB1C8300FCCA6E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -195,8 +195,8 @@
 				3FCB762518EB1E4E00FCCA6E /* Player.m */,
 				3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */,
 				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
-				3FCB75DF18EB1C8300FCCA6E /* SLCMyScene.h */,
-				3FCB75E018EB1C8300FCCA6E /* SLCMyScene.m */,
+				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
+				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
 				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
 				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
 				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
@@ -416,7 +416,7 @@
 				3FCB762618EB1E4E00FCCA6E /* Player.m in Sources */,
 				3FCB761C18EB1DD600FCCA6E /* SKEmitterNode+SKTExtras.m in Sources */,
 				3FCB760618EB1DAD00FCCA6E /* JSTileMap.m in Sources */,
-				3FCB75E118EB1C8300FCCA6E /* SLCMyScene.m in Sources */,
+				3FCB75E118EB1C8300FCCA6E /* SLCGameScene.m in Sources */,
 				3FCB761A18EB1DD600FCCA6E /* SKAction+SKTExtras.m in Sources */,
 				3FCB761D18EB1DD600FCCA6E /* SKNode+SKTDebugDraw.m in Sources */,
 				3FCB762018EB1DD600FCCA6E /* SKTEffects.m in Sources */,
