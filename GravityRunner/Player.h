@@ -11,11 +11,16 @@
 @interface Player : SKSpriteNode
 @property (nonatomic, assign) CGPoint desiredPosition;
 @property (nonatomic, assign) CGPoint velocity;
+
 @property (nonatomic, assign) BOOL onGround;
+@property (nonatomic, assign) BOOL upsideDown;
 @property (nonatomic, assign) NSInteger gravDir;
+
 @property (nonatomic, strong) SLCSpriteSheet *spriteSheet;
 
 - (void)update:(NSTimeInterval)delta;
+
+
 - (CGRect)collisionBoundingBox;
 
 /**

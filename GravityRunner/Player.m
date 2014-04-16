@@ -15,7 +15,6 @@
 @property (nonatomic, strong) SKAction *forwardWalk;
 @property (nonatomic, strong) SKAction *backwardWalk;
 @property (nonatomic, strong) SKAction *flipAnimation;
-@property (nonatomic, assign) BOOL upsideDown;
 @end
 
 @implementation Player
