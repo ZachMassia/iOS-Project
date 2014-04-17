@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
 //
 
-#import "Player.h"
+#import "SLCPlayer.h"
 #import "SKTUtils.h"
 
-@interface Player()
+@interface SLCPlayer()
 @property (nonatomic, strong) NSMutableArray *playerWalkTextures;
 
 @property (nonatomic, strong) SKAction *forwardWalk;
@@ -17,7 +17,7 @@
 @property (nonatomic, strong) SKAction *flipAnimation;
 @end
 
-@implementation Player
+@implementation SLCPlayer
 - (instancetype)init {
     // Load the sprite sheet first so that we can init the SKSpriteNode with the first animation frame.
     SLCSpriteSheet *spriteSheet = [[SLCSpriteSheet alloc] initWithAtlasNamed:@"walk_anim"];

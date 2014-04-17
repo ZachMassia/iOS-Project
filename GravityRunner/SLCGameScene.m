@@ -8,11 +8,11 @@
 #import "SKTUtils.h"
 #import "SLCGameScene.h"
 #import "JSTileMap.h"
-#import "Player.h"
+#import "SLCPlayer.h"
 
 @interface SLCGameScene()
 @property (nonatomic, strong) JSTileMap *map;
-@property (nonatomic, strong) Player    *player;
+@property (nonatomic, strong) SLCPlayer    *player;
 @property (nonatomic, strong) TMXLayer  *walls;
 @property (nonatomic, strong) NSDictionary *sounds;
 
@@ -35,7 +35,7 @@
         
         self.walls = [self.map layerNamed:@"walls"];
 
-        self.player = [[Player alloc] init];
+        self.player = [[SLCPlayer alloc] init];
         self.player.position = CGPointMake(150, 300);
         self.player.velocity = CGPointMake(100, 0);
         self.player.zPosition = 15;
@@ -93,7 +93,7 @@
     return [layer.layerInfo tileGidAtCoord:coord];
 }
 
-- (void)checkForAndResolveCollisionsForPlayer:(Player *)player forLayer:(TMXLayer *)layer {
+- (void)checkForAndResolveCollisionsForPlayer:(SLCPlayer *)player forLayer:(TMXLayer *)layer {
     NSInteger indicies[8] = {7, 1, 3, 5, 0, 2, 6, 8};
     player.onGround = NO;
     for (NSUInteger i = 0; i < 8; i++) {

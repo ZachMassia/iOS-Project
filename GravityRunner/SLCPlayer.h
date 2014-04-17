@@ -8,7 +8,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SLCSpriteSheet.h"
 
-@interface Player : SKSpriteNode
+@interface SLCPlayer : SKSpriteNode
 @property (nonatomic, assign) CGPoint desiredPosition;
 @property (nonatomic, assign) CGPoint velocity;
 
