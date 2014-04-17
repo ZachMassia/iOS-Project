@@ -10,8 +10,6 @@
 #import "SKTUtils.h"
 
 @interface SLCPlayer()
-@property (nonatomic, strong) NSMutableArray *playerWalkTextures;
-
 @property (nonatomic, strong) SKAction *forwardWalk;
 @property (nonatomic, strong) SKAction *backwardWalk;
 @property (nonatomic, strong) SKAction *flipAnimation;
@@ -58,45 +56,18 @@
 }
 
 - (CGRect)collisionBoundingBox {
-    CGRect boundingbox = CGRectInset(self.frame, 0, 0); // TODO: Fix height glitch
     CGPoint diff = CGPointSubtract(self.desiredPosition, self.position);
-    return CGRectOffset(boundingbox, diff.x, diff.y);
+    return CGRectOffset(self.frame, diff.x, diff.y);
 }
 
 - (void)flip {
-    // TODO: Mirror the character (he's facing the wrong way)
     [self runAction:self.flipAnimation withKey:@"flip_animation"];
-    [self removeActionForKey:@"walk_animation"];
+    self.upsideDown = !self.upsideDown;
+
+    // To keep things responsive, instantly flip the velocity's y-component.
     self.velocity = CGPointMake(self.velocity.x, self.velocity.y * -1);
 
-    if (self.upsideDown) {
-        self.upsideDown = NO;
-        [self runAction:self.forwardWalk withKey:@"walk_animation"];
-        self.xScale = 0.5;
-    } else {
-        self.upsideDown = YES;
-       [self runAction:self.backwardWalk withKey:@"walk_animation"];
-        self.xScale = -0.5;
-    }
+    // By flipping the sign on the scale, the texture is inversed.
+    self.xScale *= -1;
 }
-
-- (NSMutableArray *)playerWalkTextures {
-    if (!_playerWalkTextures) {
-        _playerWalkTextures = [NSMutableArray array];
-        
-        // Load the texture atlas
-        SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"p1_walk"];
-        NSInteger frameCount = atlas.textureNames.count / 2;
-
-        for (int i = 1; i <= frameCount; i++) {
-            // Grab the current frame from the atlas.
-            SKTexture *frame = [atlas textureNamed:[NSString stringWithFormat:i > 9 ? @"%@_%d" : @"%@_0%d",
-                                                    self.name, i]];
-            
-            [_playerWalkTextures addObject:frame];
-        }
-    }
-    return _playerWalkTextures;
-}
-
 @end

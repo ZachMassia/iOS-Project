@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
+/**
+ *  A helper class for creating animations from a texture atlas.
+ */
 @interface SLCSpriteSheet : NSObject
 /**
  *  The atlas name.

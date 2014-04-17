@@ -8,19 +8,45 @@
 #import <SpriteKit/SpriteKit.h>
 #import "SLCSpriteSheet.h"
 
+/**
+ *  The main player.
+ */
 @interface SLCPlayer : SKSpriteNode
 @property (nonatomic, assign) CGPoint desiredPosition;
 @property (nonatomic, assign) CGPoint velocity;
 
+/**
+ *  True when the player is in contact with a horizontal surface.
+ */
 @property (nonatomic, assign) BOOL onGround;
+
+/**
+ *  True when the player is running on the top surface.
+ */
 @property (nonatomic, assign) BOOL upsideDown;
+
+/**
+ *  The gravity direction.
+ */
 @property (nonatomic, assign) NSInteger gravDir;
 
+/**
+ *  Holds all the textures from the player's animation atlas.
+ */
 @property (nonatomic, strong) SLCSpriteSheet *spriteSheet;
 
+/**
+ *  Update the player's position and perform any collision checks.
+ *
+ *  @param delta Time since last frame.
+ */
 - (void)update:(NSTimeInterval)delta;
 
-
+/**
+ *  The player's bounding box, taking in to account any blank areas from the texture.
+ *
+ *  @return The bounding box as a CGRect.
+ */
 - (CGRect)collisionBoundingBox;
 
 /**

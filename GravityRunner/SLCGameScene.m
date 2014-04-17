@@ -29,18 +29,22 @@
         self.userInteractionEnabled = YES;
         
         self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
-        
+
+        // Load the map and grab the wall layer.
         self.map = [self loadLevel:level];
         [self addChild:self.map];
-        
         self.walls = [self.map layerNamed:@"walls"];
 
+        // Initialize the player.
+        // TODO: Read in the spawn point from the map's object layer.
         self.player = [[SLCPlayer alloc] init];
         self.player.position = CGPointMake(150, 300);
         self.player.velocity = CGPointMake(100, 0);
         self.player.zPosition = 15;
         [self.map addChild:self.player];
+
         self.gravDir = 1;
+
         [self runAction:self.sounds[@"Music01"]];
     }
     return self;
@@ -116,23 +120,25 @@
                 CGRect intersection = CGRectIntersection(playerRect, tileRect);
                 switch (tileIndex) {
                     case 7: // Below
-                        player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y + intersection.size.height);
-                        //player.velocity = CGPointMake(player.velocity.x, 0.0);
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x,
+                                                             player.desiredPosition.y + intersection.size.height);
                         player.onGround = YES;
                         break;
                         
                     case 1: // Above
-                        player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y - intersection.size.height);
-                        //player.velocity = CGPointMake(player.velocity.x, 0.0);
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x,
+                                                             player.desiredPosition.y - intersection.size.height);
                         player.onGround = YES;
                         break;
                         
                     case 3: // Left
-                        player.desiredPosition = CGPointMake(player.desiredPosition.x + intersection.size.width, player.desiredPosition.y);
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x + intersection.size.width,
+                                                             player.desiredPosition.y);
                         break;
                         
                     case 5: // Right
-                        player.desiredPosition = CGPointMake(player.desiredPosition.x - intersection.size.width, player.desiredPosition.y);
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x - intersection.size.width,
+                                                             player.desiredPosition.y);
                         break;
                         
                     default:
@@ -146,7 +152,8 @@
                             } else {
                                 intersectionHeight = -intersection.size.height;
                             }
-                            player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y + intersection.size.height);
+                            player.desiredPosition = CGPointMake(player.desiredPosition.x,
+                                                                 player.desiredPosition.y + intersection.size.height);
                         } else {
                             // Tile is diagonal, but resolving horizontally
                             float intersectionWidth;
@@ -155,7 +162,8 @@
                             } else {
                                 intersectionWidth = -intersection.size.width;
                             }
-                            player.desiredPosition = CGPointMake(player.desiredPosition.x + intersectionWidth, player.desiredPosition.y);
+                            player.desiredPosition = CGPointMake(player.desiredPosition.x + intersectionWidth,
+                                                                 player.desiredPosition.y);
                         }
                         break;
                 }

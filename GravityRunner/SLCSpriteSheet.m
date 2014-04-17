@@ -52,7 +52,4 @@
     }
     return _atlas;
 }
-
-
-
 @end

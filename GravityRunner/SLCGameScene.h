@@ -8,6 +8,18 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+/**
+ *  The main gameplay scene.
+ */
 @interface SLCGameScene : SKScene
+
+/**
+ *  Initializes the main gameplay scene with the given level.
+ *
+ *  @param size  The size of the scene.
+ *  @param level The level to load.
+ *
+ *  @return The initialized scene.
+ */
 - (id)initWithSize:(CGSize)size levelNumber:(NSUInteger)level;
 @end
