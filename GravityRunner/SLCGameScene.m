@@ -82,6 +82,10 @@
     [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.level.walls];
     [self setViewpointCenter:self.player.position];
     self.player.gravDir = self.gravDir;
+
+    if ([self isPlayerIntersectingLevelEnd]) {
+        [self handleLevelComplete];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -89,6 +93,26 @@
         self.gravDir *= -1;
         [self.player flip];
     }
+}
+
+/**
+ *  Ran once when the player completes the level.
+ */
+- (void)handleLevelComplete {
+    SKLabelNode *finishLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    finishLabel.text = @"Level Complete!";
+    finishLabel.fontSize = 50;
+    finishLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    [self addChild:finishLabel];
+}
+
+/**
+ *  Checks whether the player intersects with the level end object.
+ *
+ *  @return true if the player is intersecting with the level end, false otherwise.
+ */
+- (BOOL)isPlayerIntersectingLevelEnd {
+    return CGRectIntersectsRect([self.player collisionBoundingBox], self.level.levelCompleteLocation);
 }
 
 - (void)setViewpointCenter:(CGPoint)position {
