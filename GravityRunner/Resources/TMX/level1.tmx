@@ -10,5 +10,6 @@
  </layer>
  <objectgroup name="objects" width="64" height="24">
   <object name="spawn" x="20" y="503" width="71" height="102"/>
+  <object name="complete" x="1521" y="558" width="73" height="80"/>
  </objectgroup>
 </map>

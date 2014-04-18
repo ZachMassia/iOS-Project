@@ -5,9 +5,9 @@
 //  Created by Student on 2014-04-01.
 //  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
 
-#import "SKTUtils.h"
 #import "SLCGameScene.h"
-#import "JSTileMap.h"
+#import "SKTUtils.h"
+#import "SLCGameLevel.h"
 #import "SLCPlayer.h"
 
 @interface SLCGameScene()
@@ -17,19 +17,9 @@
 @property (nonatomic, strong) SLCPlayer *player;
 
 /**
- *  The current map.
+ *  The current level.
  */
-@property (nonatomic, strong) JSTileMap *map;
-
-/**
- *  The wall layer of the current map. This is the layer the player collides with.
- */
-@property (nonatomic, strong) TMXLayer  *walls;
-
-/**
- *  The object layer of the current map. Used for collectables, spawn points, etc.
- */
-@property (nonatomic, strong) TMXObjectGroup *objectLayer;
+@property (nonatomic, strong) SLCGameLevel *level;
 
 /**
  *  All sound effects and music are stored here. They are all loaded when the dictionary
@@ -51,21 +41,27 @@
 @implementation SLCGameScene
 
 
-- (id)initWithSize:(CGSize)size levelNumber:(NSUInteger)level {
+- (id)initWithSize:(CGSize)size level:(NSUInteger)level {
     if (self = [super initWithSize:size]) {
         self.userInteractionEnabled = YES;
         
         self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
 
-        [self setupMapWithLevel:level];
+        self.level = [[SLCGameLevel alloc] initWithLevel:level];
+        if (![self.level isValidLevel]) {
+            @throw [NSException exceptionWithName:@"InvalidLevel"
+                                           reason:@"The level is missing key layers or objects."
+                                         userInfo:nil];
+        }
+
+        [self addChild:self.level.map];
 
         // Initialize the player.
-        // TODO: Read in the spawn point from the map's object layer.
         self.player = [[SLCPlayer alloc] init];
-        self.player.position = CGPointMake(150, 300);
         self.player.velocity = CGPointMake(100, 0);
         self.player.zPosition = 15;
-        [self.map addChild:self.player];
+        self.player.position = self.level.spawnLocation.origin;
+        [self.level addChild:self.player];
 
         self.gravDir = 1;
 
@@ -83,7 +79,7 @@
     }
     self.previousUpdateTime = currentTime;
     [self.player update:delta];
-    [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.walls];
+    [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.level.walls];
     [self setViewpointCenter:self.player.position];
     self.player.gravDir = self.gravDir;
 }
@@ -94,45 +90,27 @@
         [self.player flip];
     }
 }
-/**
- *  Initialize the map and grab the needed layers.
- */
-- (void)setupMapWithLevel:(NSUInteger)level {
-    self.map = [self loadLevel:level];
-    [self addChild:self.map];
-
-    self.walls = [self.map layerNamed:@"walls"];
-
-    // Make sure we have an object layer.
-    if (!self.map.objectGroups.count) {
-        @throw [NSException exceptionWithName:@"BadLevelException"
-                                       reason:@"The level does not contain an object layer"
-                                     userInfo:nil];
-    }
-
-    self.objectLayer = self.map.objectGroups[0];
-}
 
 - (void)setViewpointCenter:(CGPoint)position {
     NSInteger x = MAX(position.x, self.size.width / 2);
     NSInteger y = MAX(position.y, self.size.height / 2);
     
-    x = MIN(x, (self.map.mapSize.width * self.map.tileSize.width) - self.size.width / 2);
-    y = MIN(y, (self.map.mapSize.height * self.map.tileSize.height) - self.size.height / 2);
+    x = MIN(x, (self.level.map.mapSize.width * self.level.map.tileSize.width) - self.size.width / 2);
+    y = MIN(y, (self.level.map.mapSize.height * self.level.map.tileSize.height) - self.size.height / 2);
     
     CGPoint actualPosition = CGPointMake(x, y);
     CGPoint centerOfView = CGPointMake(self.size.width/2, self.size.height/2);
     CGPoint viewPoint = CGPointSubtract(centerOfView, actualPosition);
-    self.map.position = viewPoint;
+    self.level.map.position = viewPoint;
 }
 
 - (CGRect)tileRectFromTileCoords:(CGPoint)tileCoords {
-    float levelHeightInPixels = self.map.mapSize.height * self.map.tileSize.height;
+    float levelHeightInPixels = self.level.map.mapSize.height * self.level.map.tileSize.height;
     
-    CGPoint origin = CGPointMake(tileCoords.x * self.map.tileSize.width,
-                                 levelHeightInPixels - ((tileCoords.y + 1) * self.map.tileSize.height));
+    CGPoint origin = CGPointMake(tileCoords.x * self.level.map.tileSize.width,
+                                 levelHeightInPixels - ((tileCoords.y + 1) * self.level.map.tileSize.height));
     
-    return CGRectMake(origin.x, origin.y, self.map.tileSize.width, self.map.tileSize.height);
+    return CGRectMake(origin.x, origin.y, self.level.map.tileSize.width, self.level.map.tileSize.height);
 }
 
 - (NSInteger)tileGIDAtTileCoord:(CGPoint)coord forLayer:(TMXLayer *)layer {
@@ -232,8 +210,5 @@
     return _sounds;
 }
 
-- (JSTileMap *)loadLevel:(NSUInteger)level {
-    return [JSTileMap mapNamed:[NSString stringWithFormat:@"level%i.tmx", level]];
-}
 
 @end

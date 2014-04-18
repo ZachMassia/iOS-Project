@@ -21,5 +21,5 @@
  *
  *  @return The initialized scene.
  */
-- (id)initWithSize:(CGSize)size levelNumber:(NSUInteger)level;
+- (id)initWithSize:(CGSize)size level:(NSUInteger)level;
 @end

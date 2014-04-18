@@ -45,6 +45,7 @@
 		3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */; };
 		92139F4918F8D6C000EF3680 /* SLCSpriteSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */; };
 		9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9222494F18FCFCB7003B64F2 /* walk_anim.atlas */; };
+		927033B91901861900627EFF /* SLCGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 927033B81901861900627EFF /* SLCGameLevel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCSpriteSheet.h; sourceTree = "<group>"; };
 		92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCSpriteSheet.m; sourceTree = "<group>"; };
 		9222494F18FCFCB7003B64F2 /* walk_anim.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = walk_anim.atlas; sourceTree = "<group>"; };
+		927033B71901861900627EFF /* SLCGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCGameLevel.h; sourceTree = "<group>"; };
+		927033B81901861900627EFF /* SLCGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCGameLevel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
 				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
 				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
+				927033B71901861900627EFF /* SLCGameLevel.h */,
+				927033B81901861900627EFF /* SLCGameLevel.m */,
 				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
 				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
 				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
@@ -419,6 +424,7 @@
 				3FCB75E118EB1C8300FCCA6E /* SLCGameScene.m in Sources */,
 				3FCB761A18EB1DD600FCCA6E /* SKAction+SKTExtras.m in Sources */,
 				3FCB761D18EB1DD600FCCA6E /* SKNode+SKTDebugDraw.m in Sources */,
+				927033B91901861900627EFF /* SLCGameLevel.m in Sources */,
 				3FCB762018EB1DD600FCCA6E /* SKTEffects.m in Sources */,
 				3FCB761E18EB1DD600FCCA6E /* SKNode+SKTExtras.m in Sources */,
 				3FCB75D818EB1C8300FCCA6E /* SLCAppDelegate.m in Sources */,
