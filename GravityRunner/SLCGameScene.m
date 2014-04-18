@@ -11,13 +11,40 @@
 #import "SLCPlayer.h"
 
 @interface SLCGameScene()
+/**
+ *  The main player.
+ */
+@property (nonatomic, strong) SLCPlayer *player;
+
+/**
+ *  The current map.
+ */
 @property (nonatomic, strong) JSTileMap *map;
-@property (nonatomic, strong) SLCPlayer    *player;
+
+/**
+ *  The wall layer of the current map. This is the layer the player collides with.
+ */
 @property (nonatomic, strong) TMXLayer  *walls;
+
+/**
+ *  The object layer of the current map. Used for collectables, spawn points, etc.
+ */
+@property (nonatomic, strong) TMXObjectGroup *objectLayer;
+
+/**
+ *  All sound effects and music are stored here. They are all loaded when the dictionary
+ *  is accessed for the first time.
+ */
 @property (nonatomic, strong) NSDictionary *sounds;
 
+/**
+ *  The last frames time; Used for calculating the delta time for update methods.
+ */
 @property (nonatomic, assign) NSTimeInterval previousUpdateTime;
 
+/**
+ *  The gravity direction.
+ */
 @property (nonatomic, assign) NSInteger gravDir;
 @end
 
@@ -30,10 +57,7 @@
         
         self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
 
-        // Load the map and grab the wall layer.
-        self.map = [self loadLevel:level];
-        [self addChild:self.map];
-        self.walls = [self.map layerNamed:@"walls"];
+        [self setupMapWithLevel:level];
 
         // Initialize the player.
         // TODO: Read in the spawn point from the map's object layer.
@@ -69,6 +93,24 @@
         self.gravDir *= -1;
         [self.player flip];
     }
+}
+/**
+ *  Initialize the map and grab the needed layers.
+ */
+- (void)setupMapWithLevel:(NSUInteger)level {
+    self.map = [self loadLevel:level];
+    [self addChild:self.map];
+
+    self.walls = [self.map layerNamed:@"walls"];
+
+    // Make sure we have an object layer.
+    if (!self.map.objectGroups.count) {
+        @throw [NSException exceptionWithName:@"BadLevelException"
+                                       reason:@"The level does not contain an object layer"
+                                     userInfo:nil];
+    }
+
+    self.objectLayer = self.map.objectGroups[0];
 }
 
 - (void)setViewpointCenter:(CGPoint)position {

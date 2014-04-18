@@ -8,4 +8,7 @@
    eJzt0csNQFAUhOG7pwIWVEAZVMCKCiiAhD48CqBLsxYbr4y48yV/ZnWTExxjjIuc3drCQ/7Bish9DWpfWBEREXlOgEL2EUQRitlHiMivJChlH0GUoZx9xIEBjWhC84ntUH9h31Kg8sY7W7dCtcXL/v7sXdD6gf/A2g3C2oK7
   </data>
  </layer>
+ <objectgroup name="objects" width="64" height="24">
+  <object name="spawn" x="20" y="503" width="71" height="102"/>
+ </objectgroup>
 </map>
