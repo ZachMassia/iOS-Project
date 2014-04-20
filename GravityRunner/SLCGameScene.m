@@ -36,6 +36,8 @@
  *  The gravity direction.
  */
 @property (nonatomic, assign) NSInteger gravDir;
+
+@property (nonatomic, weak) SLCDataManager *dataMgr;
 @end
 
 @implementation SLCGameScene
@@ -64,6 +66,9 @@
         [self.level addChild:self.player];
 
         self.gravDir = 1;
+
+        // Update the current level in the data store.
+        [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
         [self runAction:self.sounds[@"Music01"]];
     }
@@ -226,6 +231,13 @@
         }
     }
     player.position = player.desiredPosition;
+}
+
+- (SLCDataManager *)dataMgr {
+    if (!_dataMgr) {
+        _dataMgr = [SLCDataManager sharedInstance];
+    }
+    return _dataMgr;
 }
 
 - (NSDictionary *)sounds{

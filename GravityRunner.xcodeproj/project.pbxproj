@@ -48,6 +48,7 @@
 		927033B91901861900627EFF /* SLCGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 927033B81901861900627EFF /* SLCGameLevel.m */; };
 		927033BC1901D19C00627EFF /* JumpDustParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 927033BA1901D19B00627EFF /* JumpDustParticle.sks */; };
 		927033BD1901D19C00627EFF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 927033BB1901D19C00627EFF /* spark.png */; };
+		927D0D2319041626007E3255 /* SLCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 927D0D2219041626007E3255 /* SLCDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		927033B81901861900627EFF /* SLCGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCGameLevel.m; sourceTree = "<group>"; };
 		927033BA1901D19B00627EFF /* JumpDustParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JumpDustParticle.sks; sourceTree = "<group>"; };
 		927033BB1901D19C00627EFF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		927D0D2119041626007E3255 /* SLCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCDataManager.h; sourceTree = "<group>"; };
+		927D0D2219041626007E3255 /* SLCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,12 +207,16 @@
 				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
 				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
 				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
+				927D0D2119041626007E3255 /* SLCDataManager.h */,
+				927D0D2219041626007E3255 /* SLCDataManager.m */,
 				927033BA1901D19B00627EFF /* JumpDustParticle.sks */,
 				927033BB1901D19C00627EFF /* spark.png */,
 				927033B71901861900627EFF /* SLCGameLevel.h */,
 				927033B81901861900627EFF /* SLCGameLevel.m */,
 				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
 				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
+				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
+				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
 				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
 			);
 			path = GravityRunner;
@@ -218,8 +225,6 @@
 		3FCB75CE18EB1C8300FCCA6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
-				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
 				3FCB760818EB1DD600FCCA6E /* SKTUtils */,
 				3FCB760118EB1D7A00FCCA6E /* JSTileMap */,
 				3FCB75E418EB1C8300FCCA6E /* Images.xcassets */,
@@ -432,6 +437,7 @@
 				3FCB75E118EB1C8300FCCA6E /* SLCGameScene.m in Sources */,
 				3FCB761A18EB1DD600FCCA6E /* SKAction+SKTExtras.m in Sources */,
 				3FCB761D18EB1DD600FCCA6E /* SKNode+SKTDebugDraw.m in Sources */,
+				927D0D2319041626007E3255 /* SLCDataManager.m in Sources */,
 				927033B91901861900627EFF /* SLCGameLevel.m in Sources */,
 				3FCB762018EB1DD600FCCA6E /* SKTEffects.m in Sources */,
 				3FCB761E18EB1DD600FCCA6E /* SKNode+SKTExtras.m in Sources */,

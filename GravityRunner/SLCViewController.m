@@ -23,6 +23,9 @@
     // Create and configure the scene.
     SKScene *scene = [[SLCGameScene alloc] initWithSize:skView.bounds.size level:1];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+
+    // Load the game data.
+    [[SLCDataManager sharedInstance] loadData];
     
     // Present the scene.
     [skView presentScene:scene];
