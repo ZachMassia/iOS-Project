@@ -62,12 +62,32 @@
 
 - (void)flip {
     [self runAction:self.flipAnimation withKey:@"flip_animation"];
-    self.upsideDown = !self.upsideDown;
 
     // To keep things responsive, instantly flip the velocity's y-component.
     self.velocity = CGPointMake(self.velocity.x, self.velocity.y * -1);
 
     // By flipping the sign on the scale, the texture is inversed.
     self.xScale *= -1;
+
+    [self emitDustParticle];
+
+    self.upsideDown = !self.upsideDown;
+}
+
+/**
+ *  Emits a cloud of smoke from the player's position.
+ * 
+ *  TODO: Find out of particle nodes are removed from the scene when they go off screen.
+ *  TODO: Reverse particle y-velocity when player is upside down.
+ */
+- (void)emitDustParticle {
+    NSString *particlePath = [[NSBundle mainBundle] pathForResource:@"JumpDustParticle" ofType:@"sks"];
+    SKEmitterNode *particleNode = [NSKeyedUnarchiver unarchiveObjectWithFile:particlePath];
+    particleNode.numParticlesToEmit = 5;
+
+    int heightModifier = self.upsideDown ? 1 : -1;
+    particleNode.position = CGPointAdd(self.position, CGPointMake(0, (self.size.height / 2) * heightModifier));
+
+    [self.parent addChild:particleNode];
 }
 @end
