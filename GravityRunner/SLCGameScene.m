@@ -115,6 +115,11 @@
     return CGRectIntersectsRect([self.player collisionBoundingBox], self.level.levelCompleteLocation);
 }
 
+- (BOOL)isPlayerOutOfBounds:(SLCPlayer *)player forLayer:(TMXLayer *)layer {
+    CGPoint playerCoord = [layer coordForPoint:player.desiredPosition];
+    return playerCoord.y >= self.level.map.mapSize.height - 1 || playerCoord.y <= 0;
+}
+
 - (void)setViewpointCenter:(CGPoint)position {
     NSInteger x = MAX(position.x, self.size.width / 2);
     NSInteger y = MAX(position.y, self.size.height / 2);
@@ -150,6 +155,12 @@
         CGRect playerRect = [player collisionBoundingBox];
         
         CGPoint playerCoord = [layer coordForPoint:player.desiredPosition];
+
+        if ([self isPlayerOutOfBounds:player forLayer:layer]) {
+            player.position = self.level.spawnLocation.origin;
+            player.velocity = CGPointMake(player.velocity.x, 0);
+            return;
+        }
         
         NSInteger tileColumn = tileIndex % 3;
         NSInteger tileRow = tileIndex / 3;
