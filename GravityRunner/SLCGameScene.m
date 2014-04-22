@@ -97,6 +97,7 @@
     if (self.player.onGround) {
         self.gravDir *= -1;
         [self.player flip];
+        [self runAction:self.sounds[self.player.upsideDown ? @"grav-up" : @"grav-down"]];
     }
 }
 

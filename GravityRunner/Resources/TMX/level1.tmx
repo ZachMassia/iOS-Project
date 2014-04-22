@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="64" height="24" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="128" height="24" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="terrain_tiles" tilewidth="32" tileheight="32" margin="1">
   <image source="terrain_tiles.png" width="512" height="1024"/>
  </tileset>
- <layer name="walls" width="64" height="24">
+ <layer name="walls" width="128" height="24">
   <data encoding="base64" compression="zlib">
-   eJzt0csNQFAUhOG7pwIWVEAZVMCKCiiAhD48CqBLsxYbr4y48yV/ZnWTExxjjIuc3drCQ/7Bish9DWpfWBEREXlOgEL2EUQRitlHiMivJChlH0GUoZx9xIEBjWhC84ntUH9h31Kg8sY7W7dCtcXL/v7sXdD6gf/A2g3C2oK7
+   eJztmjtOw0AURd3ACmAB0EAJDVTpENAjoMFZQbIAIEC2wbeGBUBjfgU0SQkS1CDBNriRYsmyZuz5vMmz8TvS0Y0Te+ZZkxmNnERRc5mC09xFCCQswMVMmjADZ4NVJEySFbiaSRcOYQ8ewWN4YnB85VW1mjk4H6BdoR4swWXuIojYhwcBUhBssNkXCP8Pn32BIFBhssfsK65rjRWaR3bs5XvQTFo5BUHQ4/Isp25QrQUf8JOgHaGe/MBf7iJqiMsas0fQ7xt8J2hHMKdKz+S/4Dd3EQ2jas/k17kLEFjZ5i5gQmzATe4iAuB7X2tUhVScHbjLXUQAfO9ri6iOU3gGz+GFRaZ7Wtvsje071nfpcGxLts/R9SH+4+FyX6rfCR7gI3yCz5lj0/dj2GZKEyj6uYV3FhkrpKatMS74TGUC70tMNDmyA7tMaQJFPy/w1SI7CqnpakzHX/d53nQshwUONDmMeOd/VdJ2zqlMx6NoXpfpcl5iqG7+X8ObiHcd4M70tY9lbajWlLwu5w0M1c3/P21cPEQ=
   </data>
  </layer>
- <objectgroup name="objects" width="64" height="24">
+ <layer name="traps" width="128" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzjkOgDAMBMD8/z+cdfgXLlLQuCBCEIkZabVyY7sUAAAAAAAAAAAAuGeJrJEtsifzW3eu8xM7em78zRSZW6akR5H919uUUiNHS016FNl/vQ3wtRM1S0hf
+  </data>
+ </layer>
+ <layer name="background" width="128" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztmF1OwkAURrszB42RJ3+Ike3MTgDFVxXwTdF5lhUAXUCBTXCIL4S0iaTTGVu+k5xMm2lubnPn3jRNEiGEqIYe9nGAj/iEQ3zOWfefLbq+wnaw7EVZXvAV33CEY5zge866/2zR9QN2g76BEGLHHBe4xDRyLiI8Ga5wjZvIuYjwUHNH7R1nwHEWXOx8hH+Y65b5bpnzlnlvD/Yce449N1f9Gwk9bulxS4/b7KD+ovlQc0PtDWfAcBZM7HxEWJjrhvlumPMmVf2FEEKIxtLC89hJiD9z6TneLd55jimq495zvLNEH/p14sJzvGu88RxTVEcndgLi3zDFL/xOfn/IH3sv6s0HfpZYRb35wVmJVdQb9f9pU7b/txHDg/8=
+  </data>
+ </layer>
+ <objectgroup name="objects" width="128" height="24">
   <object name="spawn" x="20" y="503" width="71" height="102"/>
-  <object name="complete" x="1521" y="558" width="73" height="80"/>
+  <object name="complete" x="3487" y="527" width="73" height="80"/>
  </objectgroup>
 </map>
