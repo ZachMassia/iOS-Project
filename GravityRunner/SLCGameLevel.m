@@ -64,6 +64,19 @@
     return _levelCompleteLocation;
 }
 
+- (CGFloat)runSpeed {
+    if (!_runSpeed) {
+        // Set a default speed.
+        _runSpeed = 150.f;
+
+        // Check the map for a speed property.
+        if (self.map.properties[@"speed"]) {
+            _runSpeed = [self.map.properties[@"speed"] floatValue];
+        }
+    }
+    return _runSpeed;
+}
+
 /**
  *  Create a CGRect from an NSDictionary.
  *

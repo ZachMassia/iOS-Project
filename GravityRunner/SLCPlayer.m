@@ -26,7 +26,7 @@
         self.upsideDown = NO;
 
         self.forwardWalk = [self.spriteSheet generateAnimationWithTime:0.1f];
-        self.flipAnimation = [SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.5];
+        self.flipAnimation = [SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.25];
 
         self.xScale = 0.5;
         self.yScale = 0.5;

@@ -44,6 +44,11 @@
 @property (nonatomic, assign) CGRect levelCompleteLocation;
 
 /**
+ *  The level's run speed. If the level does not specify a speed the default speed of 150 is used.
+ */
+@property (nonatomic, assign) CGFloat runSpeed;
+
+/**
  *  Initializes a game level and pulls certain layers and objects into their own properties.
  *
  *  @param level Which level to load. Expects a .tmx file with the format 'level%i.tmx' to exist.

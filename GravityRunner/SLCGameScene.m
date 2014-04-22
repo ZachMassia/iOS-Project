@@ -60,7 +60,7 @@
 
         // Initialize the player.
         self.player = [[SLCPlayer alloc] init];
-        self.player.velocity = CGPointMake(175, 0);
+        self.player.velocity = CGPointMake(self.level.runSpeed, 0);
         self.player.zPosition = 15;
         self.player.position = self.level.spawnLocation.origin;
         [self.level addChild:self.player];
