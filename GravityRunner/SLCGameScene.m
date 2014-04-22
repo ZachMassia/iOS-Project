@@ -60,7 +60,7 @@
 
         // Initialize the player.
         self.player = [[SLCPlayer alloc] init];
-        self.player.velocity = CGPointMake(100, 0);
+        self.player.velocity = CGPointMake(175, 0);
         self.player.zPosition = 15;
         self.player.position = self.level.spawnLocation.origin;
         [self.level addChild:self.player];
@@ -164,6 +164,8 @@
         if ([self isPlayerOutOfBounds:player forLayer:layer]) {
             player.position = self.level.spawnLocation.origin;
             player.velocity = CGPointMake(player.velocity.x, 0);
+            [player runAction:[SKAction rotateToAngle:0 duration:0]];
+            player.onGround = YES;
             return;
         }
         
