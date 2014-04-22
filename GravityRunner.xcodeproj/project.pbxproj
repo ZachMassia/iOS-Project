@@ -12,6 +12,8 @@
 		3F0BD4E618FF120A001A57D7 /* button-back.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E218FF120A001A57D7 /* button-back.caf */; };
 		3F0BD4E718FF120A001A57D7 /* grav-down.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E318FF120A001A57D7 /* grav-down.caf */; };
 		3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E418FF120A001A57D7 /* grav-up.caf */; };
+		3F33EF651906D68B00FEC331 /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EF641906D68B00FEC331 /* level2.tmx */; };
+		3F33EF681906E83000FEC331 /* SLCPauseScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EF671906E83000FEC331 /* SLCPauseScene.m */; };
 		3FCB75C618EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
 		3FCB75C818EB1C8300FCCA6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */; };
 		3FCB75CA18EB1C8300FCCA6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C918EB1C8300FCCA6E /* UIKit.framework */; };
@@ -67,6 +69,9 @@
 		3F0BD4E218FF120A001A57D7 /* button-back.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "button-back.caf"; sourceTree = "<group>"; };
 		3F0BD4E318FF120A001A57D7 /* grav-down.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-down.caf"; sourceTree = "<group>"; };
 		3F0BD4E418FF120A001A57D7 /* grav-up.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-up.caf"; sourceTree = "<group>"; };
+		3F33EF641906D68B00FEC331 /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level2.tmx; sourceTree = "<group>"; };
+		3F33EF661906E83000FEC331 /* SLCPauseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCPauseScene.h; sourceTree = "<group>"; };
+		3F33EF671906E83000FEC331 /* SLCPauseScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCPauseScene.m; sourceTree = "<group>"; };
 		3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCB75C518EB1C8300FCCA6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -204,6 +209,8 @@
 				3FCB762418EB1E4E00FCCA6E /* SLCPlayer.h */,
 				3FCB762518EB1E4E00FCCA6E /* SLCPlayer.m */,
 				3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */,
+				3F33EF661906E83000FEC331 /* SLCPauseScene.h */,
+				3F33EF671906E83000FEC331 /* SLCPauseScene.m */,
 				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
 				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
 				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
@@ -311,6 +318,7 @@
 		3FCB762B18EB1FA500FCCA6E /* TMX */ = {
 			isa = PBXGroup;
 			children = (
+				3F33EF641906D68B00FEC331 /* level2.tmx */,
 				3FCB762C18EB1FA500FCCA6E /* level1.tmx */,
 				3FCB762D18EB1FA500FCCA6E /* terrain_tiles.png */,
 				3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */,
@@ -400,6 +408,7 @@
 				3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */,
 				927033BD1901D19C00627EFF /* spark.png in Resources */,
 				3FCB763218EB1FA500FCCA6E /* terrain_tiles.png in Resources */,
+				3F33EF651906D68B00FEC331 /* level2.tmx in Resources */,
 				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
 				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
@@ -438,6 +447,7 @@
 				3FCB761A18EB1DD600FCCA6E /* SKAction+SKTExtras.m in Sources */,
 				3FCB761D18EB1DD600FCCA6E /* SKNode+SKTDebugDraw.m in Sources */,
 				927D0D2319041626007E3255 /* SLCDataManager.m in Sources */,
+				3F33EF681906E83000FEC331 /* SLCPauseScene.m in Sources */,
 				927033B91901861900627EFF /* SLCGameLevel.m in Sources */,
 				3FCB762018EB1DD600FCCA6E /* SKTEffects.m in Sources */,
 				3FCB761E18EB1DD600FCCA6E /* SKNode+SKTExtras.m in Sources */,
