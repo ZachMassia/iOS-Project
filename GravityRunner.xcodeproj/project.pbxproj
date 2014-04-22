@@ -12,6 +12,8 @@
 		3F0BD4E618FF120A001A57D7 /* button-back.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E218FF120A001A57D7 /* button-back.caf */; };
 		3F0BD4E718FF120A001A57D7 /* grav-down.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E318FF120A001A57D7 /* grav-down.caf */; };
 		3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E418FF120A001A57D7 /* grav-up.caf */; };
+		3F9D66D81906EC9900E90112 /* Music03.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F9D66D61906EC9900E90112 /* Music03.caf */; };
+		3F9D66D91906EC9900E90112 /* Music02.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F9D66D71906EC9900E90112 /* Music02.caf */; };
 		3FCB75C618EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
 		3FCB75C818EB1C8300FCCA6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */; };
 		3FCB75CA18EB1C8300FCCA6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C918EB1C8300FCCA6E /* UIKit.framework */; };
@@ -67,6 +69,8 @@
 		3F0BD4E218FF120A001A57D7 /* button-back.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "button-back.caf"; sourceTree = "<group>"; };
 		3F0BD4E318FF120A001A57D7 /* grav-down.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-down.caf"; sourceTree = "<group>"; };
 		3F0BD4E418FF120A001A57D7 /* grav-up.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-up.caf"; sourceTree = "<group>"; };
+		3F9D66D61906EC9900E90112 /* Music03.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music03.caf; sourceTree = "<group>"; };
+		3F9D66D71906EC9900E90112 /* Music02.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music02.caf; sourceTree = "<group>"; };
 		3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCB75C518EB1C8300FCCA6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FCB75C718EB1C8300FCCA6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -159,6 +163,8 @@
 				3F0BD4E118FF120A001A57D7 /* button-fwd.caf */,
 				3F0BD4E218FF120A001A57D7 /* button-back.caf */,
 				3F0BD4E318FF120A001A57D7 /* grav-down.caf */,
+				3F9D66D61906EC9900E90112 /* Music03.caf */,
+				3F9D66D71906EC9900E90112 /* Music02.caf */,
 				3F0BD4E418FF120A001A57D7 /* grav-up.caf */,
 				3F0BD4DF18FF1104001A57D7 /* Music01.caf */,
 			);
@@ -401,6 +407,7 @@
 				927033BD1901D19C00627EFF /* spark.png in Resources */,
 				3FCB763218EB1FA500FCCA6E /* terrain_tiles.png in Resources */,
 				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
+				3F9D66D91906EC9900E90112 /* Music02.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
 				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
@@ -409,6 +416,7 @@
 				3F0BD4E618FF120A001A57D7 /* button-back.caf in Resources */,
 				3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */,
 				927033BC1901D19C00627EFF /* JumpDustParticle.sks in Resources */,
+				3F9D66D81906EC9900E90112 /* Music03.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
