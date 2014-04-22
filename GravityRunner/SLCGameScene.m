@@ -70,7 +70,7 @@
         // Update the current level in the data store.
         [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
-        [self runAction:self.sounds[@"Music01"]];
+        [self runAction:self.sounds[[NSString stringWithFormat:@"Music0%i", self.level.level]]];
     }
     return self;
 }
@@ -246,7 +246,8 @@
 - (NSDictionary *)sounds{
     if(!_sounds){
         NSMutableDictionary *temp = [NSMutableDictionary dictionary];
-        NSArray *sounds = @[@"Music01.caf", @"button-fwd.caf", @"button-back.caf", @"grav-down.caf", @"grav-up.caf"];
+        NSArray *sounds = @[[NSString stringWithFormat:@"Music0%i.caf", self.level.level],
+                            @"button-fwd.caf", @"button-back.caf", @"grav-down.caf", @"grav-up.caf"];
 
         // Load all the sounds as actions and use the file names without extensions as keys.
         for (NSString *sound in sounds) {
