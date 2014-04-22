@@ -77,7 +77,6 @@
 /**
  *  Emits a cloud of smoke from the player's position.
  * 
- *  TODO: Find out of particle nodes are removed from the scene when they go off screen.
  *  TODO: Reverse particle y-velocity when player is upside down.
  */
 - (void)emitDustParticle {
@@ -87,6 +86,11 @@
 
     int heightModifier = self.upsideDown ? 1 : -1;
     particleNode.position = CGPointAdd(self.position, CGPointMake(0, (self.size.height / 2) * heightModifier));
+    particleNode.yAcceleration = heightModifier;
+    // Remove the sprite from the scene after 30 seconds.
+    [particleNode runAction:[SKAction sequence:
+                             @[[SKAction waitForDuration:30],
+                               [SKAction removeFromParent]]]];
 
     [self.parent addChild:particleNode];
 }
