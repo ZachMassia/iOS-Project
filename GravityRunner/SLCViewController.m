@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
 
     // Create and configure the scene.
-    SKScene *scene = [[SLCGameScene alloc] initWithSize:skView.bounds.size level:1];
+    SKScene *scene = [[SLCGameScene alloc] initWithSize:skView.bounds.size level:2];
     scene.scaleMode = SKSceneScaleModeAspectFill;
 
     // Load the game data.

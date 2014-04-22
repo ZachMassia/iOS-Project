@@ -9,6 +9,7 @@
 #import "SKTUtils.h"
 #import "SLCGameLevel.h"
 #import "SLCPlayer.h"
+#import "SLCPauseScene.h"
 
 @interface SLCGameScene()
 /**
@@ -38,6 +39,8 @@
 @property (nonatomic, assign) NSInteger gravDir;
 
 @property (nonatomic, weak) SLCDataManager *dataMgr;
+
+@property (nonatomic, strong) SKLabelNode *myLabel;
 @end
 
 @implementation SLCGameScene
@@ -66,7 +69,15 @@
         [self.level addChild:self.player];
 
         self.gravDir = 1;
-
+        
+        self.myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.myLabel.name = @"Label1";
+        self.myLabel.text = @"Pause";
+        self.myLabel.fontSize = 20;
+        self.myLabel.position = CGPointMake(CGRectGetMidX(self.frame)*(2)-(35),
+                                            CGRectGetMidY(self.frame)+(250));
+        
+        [self addChild:self.myLabel];
         // Update the current level in the data store.
         [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
@@ -94,7 +105,19 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (self.player.onGround) {
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+    
+    //if fire button touched, bring the rain
+    if ([node.name isEqualToString:@"Label1"]) {
+        SLCPauseScene *pauseScene = [[SLCPauseScene alloc] initWithSize:self.scene.size];
+        pauseScene.scaleMode = SKSceneScaleModeAspectFill;
+        pauseScene.otherScene = self;
+        [self.scene.view presentScene: pauseScene];
+    }
+    else if (self.player.onGround) {
         self.gravDir *= -1;
         [self.player flip];
         [self runAction:self.sounds[self.player.upsideDown ? @"grav-up" : @"grav-down"]];

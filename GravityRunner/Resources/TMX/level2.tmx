@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="128" height="24" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="terrain_tiles" tilewidth="32" tileheight="32" margin="1">
+  <image source="terrain_tiles.png" width="512" height="1024"/>
+ </tileset>
+ <layer name="walls" width="128" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztmkFqwkAYhf+btCewV3BRXNlVcVdLzVohPUBlrqFx6aLapRfwaL4QBocwSYhk+o/O++DxAmGGfzLzhxeISDhykfE3dBQ5HyDrfeepj3cd85/zG+Yk4Vlg7zOowP5sodI3N+wVxozteJ8vuP+EEEIiwOYeZpM0sbknYzYhhBAyMF0ZgxnksenKGMwghJAmJs71E/SsVAfRYeZcj6AXrUKICq/aBRBV3rULCASyrmyhosHfkIWnUEiv1zTEvKjfoH6DPG+wRuNbd1ap9X75HHaOPxr41hV885b/DMjB46E5BZr3q/rnwWBtJvfsr1131/3yOfw5roE9i219WkjzWY6ZvXYBd4A9i77+dL3pLMdMqP4PxUau/bbr4T/QuuYf/1x7jNxb/8+hzwE9dXz9H/M7YQmtBvTUYf+nTcy97uNXqrzF/k+TC2bqxt8=
+  </data>
+ </layer>
+ <layer name="traps" width="128" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt2kkKgDAQRcG+/40cQJcOoFeywQtkEZVgFXzetiHbRLxvjZiXXGk/OJEH9fmmXa60X98LAAAAAAAAAADwB1PcH7a0jdZ25E5tprUNuVGbaW1bbtdmegHL0HCY
+  </data>
+ </layer>
+ <layer name="background" width="128" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt0zsKgDAQhGFv5gtbX3g/FaxV8AIeza0t1CaZGP4PBnbTZJpNEgAAAAAAAAAAEINKXQBSg7oApEp1AUj1tz23FJ47jJbJMj/Mf7R8fAtJa+k8/7laNsv+MMfiUBd4kVoydYmIhX7/taVRl4hY6PcPt0K/f7h1qgsAAHBzAXiLE+w=
+  </data>
+ </layer>
+ <objectgroup name="objects" width="128" height="24">
+  <object name="spawn" x="20" y="503" width="71" height="102"/>
+  <object name="complete" x="3998" y="399" width="73" height="80"/>
+ </objectgroup>
+</map>
