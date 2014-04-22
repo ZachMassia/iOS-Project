@@ -11,7 +11,6 @@
 
 @interface SLCPlayer()
 @property (nonatomic, strong) SKAction *forwardWalk;
-@property (nonatomic, strong) SKAction *backwardWalk;
 @property (nonatomic, strong) SKAction *flipAnimation;
 @end
 
@@ -27,7 +26,6 @@
         self.upsideDown = NO;
 
         self.forwardWalk = [self.spriteSheet generateAnimationWithTime:0.1f];
-        self.backwardWalk = [self.forwardWalk reversedAction];
         self.flipAnimation = [SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.5];
 
         self.xScale = 0.5;
