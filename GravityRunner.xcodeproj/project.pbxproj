@@ -17,6 +17,7 @@
 		3F0CF00819084EEA00B4E7EC /* SLCLevelSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CF00719084EEA00B4E7EC /* SLCLevelSelect.m */; };
 		3F33EF651906D68B00FEC331 /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EF641906D68B00FEC331 /* level2.tmx */; };
 		3F33EF681906E83000FEC331 /* SLCPauseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EF671906E83000FEC331 /* SLCPauseMenu.m */; };
+		3F4CAC3319084DA700AF147A /* SLCMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CAC3219084DA700AF147A /* SLCMainMenu.m */; };
 		3F9D66D81906EC9900E90112 /* Music03.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F9D66D61906EC9900E90112 /* Music03.caf */; };
 		3F9D66D91906EC9900E90112 /* Music02.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F9D66D71906EC9900E90112 /* Music02.caf */; };
 		3FCB75C618EB1C8300FCCA6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB75C518EB1C8300FCCA6E /* Foundation.framework */; };
@@ -86,6 +87,8 @@
 		3F33EF641906D68B00FEC331 /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level2.tmx; sourceTree = "<group>"; };
 		3F33EF661906E83000FEC331 /* SLCPauseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCPauseMenu.h; sourceTree = "<group>"; };
 		3F33EF671906E83000FEC331 /* SLCPauseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCPauseMenu.m; sourceTree = "<group>"; };
+		3F4CAC3119084DA700AF147A /* SLCMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCMainMenu.h; sourceTree = "<group>"; };
+		3F4CAC3219084DA700AF147A /* SLCMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCMainMenu.m; sourceTree = "<group>"; };
 		3F9D66D61906EC9900E90112 /* Music03.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music03.caf; sourceTree = "<group>"; };
 		3F9D66D71906EC9900E90112 /* Music02.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music02.caf; sourceTree = "<group>"; };
 		3FCB75C218EB1C8300FCCA6E /* GravityRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +356,8 @@
 		9241A24F19076C5900E7F97A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3F4CAC3119084DA700AF147A /* SLCMainMenu.h */,
+				3F4CAC3219084DA700AF147A /* SLCMainMenu.m */,
 				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
 				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
 			);
@@ -511,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4CAC3319084DA700AF147A /* SLCMainMenu.m in Sources */,
 				3FCB75D418EB1C8300FCCA6E /* main.m in Sources */,
 				3FCB761F18EB1DD600FCCA6E /* SKTAudio.m in Sources */,
 				9241A25B1907A7C800E7F97A /* SLCButtonNode.m in Sources */,
