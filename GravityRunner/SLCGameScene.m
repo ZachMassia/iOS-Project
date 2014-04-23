@@ -104,6 +104,11 @@
         SLCPauseScene *pauseScene = [[SLCPauseScene alloc] initWithSize:self.scene.size];
         pauseScene.scaleMode = SKSceneScaleModeAspectFill;
         pauseScene.otherScene = self;
+
+        // Because actions only happen on the next game loop, play the button
+        // sound on the pause scene.
+        [pauseScene runAction:self.sounds[@"button-fwd"]];
+
         [self.scene.view presentScene: pauseScene];
     }
     else if (self.player.onGround) {

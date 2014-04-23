@@ -10,7 +10,7 @@
 #import "SLCGameScene.h"
 
 @interface SLCPauseScene()
-@property (nonatomic, strong) SKLabelNode *myLabel;
+@property (nonatomic, strong) SKLabelNode *resumeLabel;
 @end
 
 @implementation SLCPauseScene
@@ -19,14 +19,14 @@
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:0.2];
         
-        self.myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        self.myLabel.name = @"Resume";
-        self.myLabel.text = @"Resume Game";
-        self.myLabel.fontSize = 30;
-        self.myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
+        self.resumeLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.resumeLabel.name = @"Resume";
+        self.resumeLabel.text = @"Resume Game";
+        self.resumeLabel.fontSize = 30;
+        self.resumeLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                             CGRectGetMidY(self.frame));
 
-        [self addChild:self.myLabel];
+        [self addChild:self.resumeLabel];
 
     }
     return self;
