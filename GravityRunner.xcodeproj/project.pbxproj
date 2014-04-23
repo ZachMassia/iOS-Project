@@ -50,6 +50,8 @@
 		92139F4918F8D6C000EF3680 /* SLCSpriteSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */; };
 		9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9222494F18FCFCB7003B64F2 /* walk_anim.atlas */; };
 		9241A24E19073F1800E7F97A /* ui.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9241A24D19073F1800E7F97A /* ui.atlas */; };
+		9241A2541907718F00E7F97A /* kenpixel_blocks.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9241A2521907718F00E7F97A /* kenpixel_blocks.ttf */; };
+		9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9241A2531907718F00E7F97A /* kenvector_future.ttf */; };
 		927033B91901861900627EFF /* SLCGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 927033B81901861900627EFF /* SLCGameLevel.m */; };
 		927033BC1901D19C00627EFF /* JumpDustParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 927033BA1901D19B00627EFF /* JumpDustParticle.sks */; };
 		927033BD1901D19C00627EFF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 927033BB1901D19C00627EFF /* spark.png */; };
@@ -130,6 +132,8 @@
 		92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCSpriteSheet.m; sourceTree = "<group>"; };
 		9222494F18FCFCB7003B64F2 /* walk_anim.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = walk_anim.atlas; sourceTree = "<group>"; };
 		9241A24D19073F1800E7F97A /* ui.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ui.atlas; sourceTree = "<group>"; };
+		9241A2521907718F00E7F97A /* kenpixel_blocks.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kenpixel_blocks.ttf; sourceTree = "<group>"; };
+		9241A2531907718F00E7F97A /* kenvector_future.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kenvector_future.ttf; sourceTree = "<group>"; };
 		927033B71901861900627EFF /* SLCGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCGameLevel.h; sourceTree = "<group>"; };
 		927033B81901861900627EFF /* SLCGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCGameLevel.m; sourceTree = "<group>"; };
 		927033BA1901D19B00627EFF /* JumpDustParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = JumpDustParticle.sks; path = ../JumpDustParticle.sks; sourceTree = "<group>"; };
@@ -300,10 +304,11 @@
 		3FCB762718EB1FA500FCCA6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				927033BA1901D19B00627EFF /* JumpDustParticle.sks */,
-				927033BB1901D19C00627EFF /* spark.png */,
-				3F0BD4D418FF09C0001A57D7 /* Sounds */,
+				9241A2511907718F00E7F97A /* Fonts */,
 				3FCB762818EB1FA500FCCA6E /* Images */,
+				927033BA1901D19B00627EFF /* JumpDustParticle.sks */,
+				3F0BD4D418FF09C0001A57D7 /* Sounds */,
+				927033BB1901D19C00627EFF /* spark.png */,
 				3FCB762B18EB1FA500FCCA6E /* TMX */,
 			);
 			path = Resources;
@@ -349,6 +354,15 @@
 				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		9241A2511907718F00E7F97A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9241A2521907718F00E7F97A /* kenpixel_blocks.ttf */,
+				9241A2531907718F00E7F97A /* kenvector_future.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9241A2541907718F00E7F97A /* kenpixel_blocks.ttf in Resources */,
 				3FCB75D218EB1C8300FCCA6E /* InfoPlist.strings in Resources */,
 				3FCB75E518EB1C8300FCCA6E /* Images.xcassets in Resources */,
 				3FCB75DB18EB1C8300FCCA6E /* Main.storyboard in Resources */,
@@ -438,6 +453,7 @@
 				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
 				3F9D66D91906EC9900E90112 /* Music02.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
+				9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */,
 				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
 				3FCB763118EB1FA500FCCA6E /* level1.tmx in Resources */,

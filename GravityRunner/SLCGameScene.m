@@ -60,6 +60,7 @@
         [self addChild:self.level.map];
 
         [self createPauseButton];
+        [self createJumpButton];
 
         // Initialize the player.
         self.player = [[SLCPlayer alloc] init];
@@ -257,13 +258,22 @@
  *  Initialize the pause button node and add it to the scene.
  */
 - (void)createPauseButton {
-    NSUInteger pauseBtnOffset = 7;
+    NSUInteger offset = 10;
 
-    SKSpriteNode *pauseLabel = [SKSpriteNode spriteNodeWithImageNamed:@"pause_btn"];
-    pauseLabel.name = @"Pause_BTN";
-    pauseLabel.position = CGPointMake(pauseLabel.size.width + pauseBtnOffset,
-                                      self.frame.size.height - pauseLabel.size.height - pauseBtnOffset);
-    [self addChild:pauseLabel];
+    SKSpriteNode *button = [SKSpriteNode spriteNodeWithImageNamed:@"pause_btn"];
+    button.name = @"Pause_BTN";
+    button.position = CGPointMake(button.size.width + offset, self.frame.size.height - button.size.height - offset);
+    [self addChild:button];
+}
+
+- (void)createJumpButton {
+    NSUInteger offset = 10;
+
+    SKSpriteNode *button = [SKSpriteNode spriteNodeWithImageNamed:@"jump_btn"];
+    button.name = @"Jump_BTN";
+    button.position = CGPointMake(self.frame.size.width - button.size.width - offset,
+                                  button.size.height + offset);
+    [self addChild:button];
 }
 
 - (SLCDataManager *)dataMgr {

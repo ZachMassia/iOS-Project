@@ -17,14 +17,13 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:0.2];
+        self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
         
-        self.resumeLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.resumeLabel = [SKLabelNode labelNodeWithFontNamed:@"KenPixel Blocks"];
         self.resumeLabel.name = @"Resume";
         self.resumeLabel.text = @"Resume Game";
-        self.resumeLabel.fontSize = 30;
-        self.resumeLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                            CGRectGetMidY(self.frame));
+        self.resumeLabel.fontSize = 50;
+        self.resumeLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
 
         [self addChild:self.resumeLabel];
 
