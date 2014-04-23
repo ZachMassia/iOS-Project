@@ -112,10 +112,11 @@
 
         [self.scene.view presentScene: pauseScene];
     }
-    else if (self.player.onGround) {
+    else if (self.player.onGround && [node.name isEqualToString:@"Jump_BTN"]) {
         self.gravDir *= -1;
         [self.player flip];
         [self runAction:self.sounds[self.player.upsideDown ? @"grav-up" : @"grav-down"]];
+        [node runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.25]];
     }
 }
 
