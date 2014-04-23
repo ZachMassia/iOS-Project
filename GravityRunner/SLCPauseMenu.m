@@ -7,14 +7,14 @@
 //
 
 #import "SLCPauseMenu.h"
-#import "SLCButtonNode.h"
+#import "SLCTextButtonNode.h"
 
 @interface SLCPauseMenu()
 
 @property (assign, nonatomic, readwrite) BOOL isVisible;
 
-@property (strong, nonatomic) SLCButtonNode *resumeBtn;
-@property (strong, nonatomic) SLCButtonNode *quitBtn;
+@property (strong, nonatomic) SLCTextButtonNode *resumeBtn;
+@property (strong, nonatomic) SLCTextButtonNode *quitBtn;
 
 @end
 
@@ -45,7 +45,7 @@
 
 
         // Create the resume button.
-        self.resumeBtn = [[SLCButtonNode alloc] initWithImageNamed:@"green_button08"
+        self.resumeBtn = [[SLCTextButtonNode alloc] initWithImageNamed:@"green_button08"
                                                               size:CGSizeMake(bgFrame.size.width  * 0.45,
                                                                               bgFrame.size.height * 0.18)
                                                               text:@"Resume"];
@@ -56,9 +56,9 @@
         };
 
         // Create the quit button.
-        self.quitBtn = [[SLCButtonNode alloc] initWithImageNamed:@"red_button08"
+        self.quitBtn = [[SLCTextButtonNode alloc] initWithImageNamed:@"red_button08"
                                                             size:CGSizeMake(bgFrame.size.width  * 0.30,
-                                                                             bgFrame.size.height * 0.18)
+                                                                            bgFrame.size.height * 0.18)
                                                             text:@"Quit"];
         self.quitBtn.position = CGPointMake(-95, -75);
         self.quitBtn.touchSound = @"button-fwd.caf";

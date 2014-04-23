@@ -10,6 +10,9 @@
 
 typedef void(^TouchHandler)(void);
 
+/**
+ *  A simple wrapper around an SKNode which provides a texture and a click handler.
+ */
 @interface SLCButtonNode : SKNode
 
 /**
@@ -23,6 +26,11 @@ typedef void(^TouchHandler)(void);
 @property (strong, nonatomic) NSString *touchSound;
 
 /**
+ *  The button texture.
+ */
+@property (strong, nonatomic, readonly) SKSpriteNode *texture;
+
+/**
  *  Initialize a button and scale the texture.
  *
  *  @param name The texture name.
@@ -30,6 +38,6 @@ typedef void(^TouchHandler)(void);
  *
  *  @return The button node.
  */
-- (id)initWithImageNamed:(NSString *)name size:(CGSize)size text:(NSString *)text;
+- (id)initWithImageNamed:(NSString *)name size:(CGSize)size;
 
 @end
