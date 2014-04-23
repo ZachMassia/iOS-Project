@@ -9,24 +9,19 @@
 #import "SLCPauseScene.h"
 #import "SLCGameScene.h"
 
-@interface SLCPauseScene()
-@property (nonatomic, strong) SKLabelNode *resumeLabel;
-@end
-
 @implementation SLCPauseScene
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [SKColor colorWithRed:.823529412 green:.956862745 blue:.968627451 alpha:1.0];
         
-        self.resumeLabel = [SKLabelNode labelNodeWithFontNamed:@"KenPixel Blocks"];
-        self.resumeLabel.name = @"Resume";
-        self.resumeLabel.text = @"Resume Game";
-        self.resumeLabel.fontSize = 50;
-        self.resumeLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        SKLabelNode *resumeLabel = [SKLabelNode labelNodeWithFontNamed:@"KenPixel Blocks"];
+        resumeLabel.name = @"Resume";
+        resumeLabel.text = @"Resume Game";
+        resumeLabel.fontSize = 50;
+        resumeLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
 
-        [self addChild:self.resumeLabel];
-
+        [self addChild:resumeLabel];
     }
     return self;
 }
@@ -36,6 +31,7 @@
     SKNode *node = [self nodeAtPoint:location];
 
     if ([node.name isEqualToString:@"Resume"]) {
+        [self.otherScene runAction:self.otherScene.sounds[@"button-fwd"]];
         [self.scene.view presentScene: self.otherScene];
     }
 }

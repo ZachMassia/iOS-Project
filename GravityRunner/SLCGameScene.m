@@ -22,11 +22,7 @@
  */
 @property (nonatomic, strong) SLCGameLevel *level;
 
-/**
- *  All sound effects and music are stored here. They are all loaded when the dictionary
- *  is accessed for the first time.
- */
-@property (nonatomic, strong) NSDictionary *sounds;
+@property (nonatomic, strong, readwrite) NSDictionary *sounds;
 
 /**
  *  The last frames time; Used for calculating the delta time for update methods.
@@ -267,6 +263,9 @@
     [self addChild:button];
 }
 
+/**
+ *  Initialize the jump button node and add it to the scene.
+ */
 - (void)createJumpButton {
     NSUInteger offset = 10;
 

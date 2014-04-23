@@ -8,6 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@class SLCGameScene;
+
 @interface SLCPauseScene : SKScene
-@property (nonatomic, strong) SKScene *otherScene;
+
+/**
+ *  A pointer to the game scene so the state can be kept.
+ */
+@property (nonatomic, strong) SLCGameScene *otherScene;
+
 @end

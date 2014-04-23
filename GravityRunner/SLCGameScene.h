@@ -14,6 +14,12 @@
 @interface SLCGameScene : SKScene
 
 /**
+ *  All sound effects and music are stored here. They are all loaded when the dictionary
+ *  is accessed for the first time.
+ */
+@property (nonatomic, strong, readonly) NSDictionary *sounds;
+
+/**
  *  Initializes the main gameplay scene with the given level.
  *
  *  @param size  The size of the scene.
