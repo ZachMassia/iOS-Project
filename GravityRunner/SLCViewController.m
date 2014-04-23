@@ -8,6 +8,7 @@
 
 #import "SLCViewController.h"
 #import "SLCGameScene.h"
+#import "SLCMainMenu.h"
 
 @implementation SLCViewController
 
@@ -21,7 +22,7 @@
     skView.showsNodeCount = YES;
 
     // Create and configure the scene.
-    SKScene *scene = [[SLCGameScene alloc] initWithSize:skView.bounds.size level:2];
+    SKScene *scene = [[SLCMainMenu alloc] initWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
 
     // Load the game data.
