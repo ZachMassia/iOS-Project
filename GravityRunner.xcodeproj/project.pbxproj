@@ -14,6 +14,7 @@
 		3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E418FF120A001A57D7 /* grav-up.caf */; };
 		3F0CF00119083E5000B4E7EC /* level3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CEFFF19083E5000B4E7EC /* level3.tmx */; };
 		3F0CF00219083E5000B4E7EC /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CF00019083E5000B4E7EC /* star.png */; };
+		3F0EB45019086A9C00EB5ACA /* level4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F0EB44F19086A9C00EB5ACA /* level4.tmx */; };
 		3F33EF651906D68B00FEC331 /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EF641906D68B00FEC331 /* level2.tmx */; };
 		3F33EF681906E83000FEC331 /* SLCPauseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EF671906E83000FEC331 /* SLCPauseMenu.m */; };
 		3F4CAC3319084DA700AF147A /* SLCMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CAC3219084DA700AF147A /* SLCMainMenu.m */; };
@@ -81,6 +82,7 @@
 		3F0BD4E418FF120A001A57D7 /* grav-up.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-up.caf"; sourceTree = "<group>"; };
 		3F0CEFFF19083E5000B4E7EC /* level3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level3.tmx; sourceTree = "<group>"; };
 		3F0CF00019083E5000B4E7EC /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		3F0EB44F19086A9C00EB5ACA /* level4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level4.tmx; sourceTree = "<group>"; };
 		3F33EF641906D68B00FEC331 /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level2.tmx; sourceTree = "<group>"; };
 		3F33EF661906E83000FEC331 /* SLCPauseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCPauseMenu.h; sourceTree = "<group>"; };
 		3F33EF671906E83000FEC331 /* SLCPauseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCPauseMenu.m; sourceTree = "<group>"; };
@@ -340,10 +342,11 @@
 		3FCB762B18EB1FA500FCCA6E /* TMX */ = {
 			isa = PBXGroup;
 			children = (
-				3F0CEFFF19083E5000B4E7EC /* level3.tmx */,
-				3F0CF00019083E5000B4E7EC /* star.png */,
-				3F33EF641906D68B00FEC331 /* level2.tmx */,
 				3FCB762C18EB1FA500FCCA6E /* level1.tmx */,
+				3F33EF641906D68B00FEC331 /* level2.tmx */,
+				3F0CEFFF19083E5000B4E7EC /* level3.tmx */,
+				3F0EB44F19086A9C00EB5ACA /* level4.tmx */,
+				3F0CF00019083E5000B4E7EC /* star.png */,
 				3FCB762D18EB1FA500FCCA6E /* terrain_tiles.png */,
 				3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */,
 			);
@@ -484,6 +487,7 @@
 				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
 				3F9D66D91906EC9900E90112 /* Music02.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
+				3F0EB45019086A9C00EB5ACA /* level4.tmx in Resources */,
 				9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */,
 				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
