@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 edu.stlawrencetech. All rights reserved.
 //
 
-#import "SLCLevelSelect.h"
+#import "SLCLevelSelectMenu.h"
 #import "SLCTextButtonNode.h"
 #import "SLCGameScene.h"
 
-@implementation SLCLevelSelect
+@implementation SLCLevelSelectMenu
 
 -(id)initWithSize:(CGSize)size{
     

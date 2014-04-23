@@ -9,7 +9,7 @@
 #import "SLCMainMenu.h"
 #import "SLCTextButtonNode.h"
 #import "SLCGameScene.h"
-#import "SLCLevelSelect.h"
+#import "SLCLevelSelectMenu.h"
 
 @implementation SLCMainMenu
 -(id)initWithSize:(CGSize)size {
@@ -42,7 +42,7 @@
         lvlSelectBtn.position = CGPointMake(0, 80);
         lvlSelectBtn.touchSound = @"button-fwd.caf";
         lvlSelectBtn.onTouch = ^{
-            SKScene *scene = [[SLCLevelSelect alloc] initWithSize:weakSelf.scene.size];
+            SKScene *scene = [[SLCLevelSelectMenu alloc] initWithSize:weakSelf.scene.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
             
             // Present the scene.

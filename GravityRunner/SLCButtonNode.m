@@ -31,7 +31,6 @@
     [self.onTouch invoke];
 }
 
-
 - (SKSpriteNode *)createTextureWithImageNamed:(NSString *)name
                                          size:(CGSize)size {
     if (!_texture) {

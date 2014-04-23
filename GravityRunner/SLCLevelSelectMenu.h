@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SLCLevelSelect : SKScene
+@interface SLCLevelSelectMenu : SKScene
 
 @end

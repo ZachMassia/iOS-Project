@@ -14,7 +14,7 @@
 		3F0BD4E818FF120A001A57D7 /* grav-up.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BD4E418FF120A001A57D7 /* grav-up.caf */; };
 		3F0CF00119083E5000B4E7EC /* level3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CEFFF19083E5000B4E7EC /* level3.tmx */; };
 		3F0CF00219083E5000B4E7EC /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CF00019083E5000B4E7EC /* star.png */; };
-		3F0CF00819084EEA00B4E7EC /* SLCLevelSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CF00719084EEA00B4E7EC /* SLCLevelSelect.m */; };
+		3F0CF00819084EEA00B4E7EC /* SLCLevelSelectMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CF00719084EEA00B4E7EC /* SLCLevelSelectMenu.m */; };
 		3F33EF651906D68B00FEC331 /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3F33EF641906D68B00FEC331 /* level2.tmx */; };
 		3F33EF681906E83000FEC331 /* SLCPauseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33EF671906E83000FEC331 /* SLCPauseMenu.m */; };
 		3F4CAC3319084DA700AF147A /* SLCMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CAC3219084DA700AF147A /* SLCMainMenu.m */; };
@@ -82,8 +82,8 @@
 		3F0BD4E418FF120A001A57D7 /* grav-up.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "grav-up.caf"; sourceTree = "<group>"; };
 		3F0CEFFF19083E5000B4E7EC /* level3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level3.tmx; sourceTree = "<group>"; };
 		3F0CF00019083E5000B4E7EC /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		3F0CF00619084EEA00B4E7EC /* SLCLevelSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCLevelSelect.h; sourceTree = "<group>"; };
-		3F0CF00719084EEA00B4E7EC /* SLCLevelSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCLevelSelect.m; sourceTree = "<group>"; };
+		3F0CF00619084EEA00B4E7EC /* SLCLevelSelectMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCLevelSelectMenu.h; sourceTree = "<group>"; };
+		3F0CF00719084EEA00B4E7EC /* SLCLevelSelectMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCLevelSelectMenu.m; sourceTree = "<group>"; };
 		3F33EF641906D68B00FEC331 /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level2.tmx; sourceTree = "<group>"; };
 		3F33EF661906E83000FEC331 /* SLCPauseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCPauseMenu.h; sourceTree = "<group>"; };
 		3F33EF671906E83000FEC331 /* SLCPauseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCPauseMenu.m; sourceTree = "<group>"; };
@@ -235,8 +235,9 @@
 			children = (
 				3FCB762718EB1FA500FCCA6E /* Resources */,
 				9241A25019076CAD00E7F97A /* Utils */,
-				9241A24F19076C5900E7F97A /* Scenes */,
 				9241A256190793D000E7F97A /* Menus */,
+				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
+				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
 				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
 				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
 				3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */,
@@ -353,17 +354,6 @@
 			path = TMX;
 			sourceTree = "<group>";
 		};
-		9241A24F19076C5900E7F97A /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				3F4CAC3119084DA700AF147A /* SLCMainMenu.h */,
-				3F4CAC3219084DA700AF147A /* SLCMainMenu.m */,
-				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
-				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
-			);
-			name = Scenes;
-			sourceTree = "<group>";
-		};
 		9241A25019076CAD00E7F97A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,10 +381,12 @@
 		9241A256190793D000E7F97A /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				3F4CAC3119084DA700AF147A /* SLCMainMenu.h */,
+				3F4CAC3219084DA700AF147A /* SLCMainMenu.m */,
 				3F33EF661906E83000FEC331 /* SLCPauseMenu.h */,
 				3F33EF671906E83000FEC331 /* SLCPauseMenu.m */,
-				3F0CF00619084EEA00B4E7EC /* SLCLevelSelect.h */,
-				3F0CF00719084EEA00B4E7EC /* SLCLevelSelect.m */,
+				3F0CF00619084EEA00B4E7EC /* SLCLevelSelectMenu.h */,
+				3F0CF00719084EEA00B4E7EC /* SLCLevelSelectMenu.m */,
 			);
 			name = Menus;
 			sourceTree = "<group>";
@@ -538,7 +530,7 @@
 				92139F4918F8D6C000EF3680 /* SLCSpriteSheet.m in Sources */,
 				3FCB760718EB1DAD00FCCA6E /* LFCGzipUtility.m in Sources */,
 				3FCB75DE18EB1C8300FCCA6E /* SLCViewController.m in Sources */,
-				3F0CF00819084EEA00B4E7EC /* SLCLevelSelect.m in Sources */,
+				3F0CF00819084EEA00B4E7EC /* SLCLevelSelectMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
