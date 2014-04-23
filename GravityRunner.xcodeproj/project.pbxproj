@@ -214,22 +214,16 @@
 			isa = PBXGroup;
 			children = (
 				3FCB762718EB1FA500FCCA6E /* Resources */,
+				9241A25019076CAD00E7F97A /* Utils */,
+				9241A24F19076C5900E7F97A /* Scenes */,
 				3FCB75D618EB1C8300FCCA6E /* SLCAppDelegate.h */,
 				3FCB75D718EB1C8300FCCA6E /* SLCAppDelegate.m */,
-				927D0D2119041626007E3255 /* SLCDataManager.h */,
-				927D0D2219041626007E3255 /* SLCDataManager.m */,
-				927033B71901861900627EFF /* SLCGameLevel.h */,
-				927033B81901861900627EFF /* SLCGameLevel.m */,
-				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
-				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
-				3F33EF661906E83000FEC331 /* SLCPauseScene.h */,
-				3F33EF671906E83000FEC331 /* SLCPauseScene.m */,
-				3FCB762418EB1E4E00FCCA6E /* SLCPlayer.h */,
-				3FCB762518EB1E4E00FCCA6E /* SLCPlayer.m */,
-				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
-				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
 				3FCB75DC18EB1C8300FCCA6E /* SLCViewController.h */,
 				3FCB75DD18EB1C8300FCCA6E /* SLCViewController.m */,
+				927033B71901861900627EFF /* SLCGameLevel.h */,
+				927033B81901861900627EFF /* SLCGameLevel.m */,
+				3FCB762418EB1E4E00FCCA6E /* SLCPlayer.h */,
+				3FCB762518EB1E4E00FCCA6E /* SLCPlayer.m */,
 				927033BA1901D19B00627EFF /* JumpDustParticle.sks */,
 				927033BB1901D19C00627EFF /* spark.png */,
 				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
@@ -333,6 +327,28 @@
 				3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */,
 			);
 			path = TMX;
+			sourceTree = "<group>";
+		};
+		9241A24F19076C5900E7F97A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB75DF18EB1C8300FCCA6E /* SLCGameScene.h */,
+				3FCB75E018EB1C8300FCCA6E /* SLCGameScene.m */,
+				3F33EF661906E83000FEC331 /* SLCPauseScene.h */,
+				3F33EF671906E83000FEC331 /* SLCPauseScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		9241A25019076CAD00E7F97A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				927D0D2119041626007E3255 /* SLCDataManager.h */,
+				927D0D2219041626007E3255 /* SLCDataManager.m */,
+				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
+				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
