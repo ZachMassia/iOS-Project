@@ -34,16 +34,32 @@
         [self addChild:titleLabel];
         
         __unsafe_unretained typeof(self) weakSelf = self;
-        NSArray *posMod = @[@-1, @0, @1];
-        
-        for(NSUInteger i = 1; i <= 3; i++) {
+
+        for(NSUInteger i = 1; i <= 4; i++) {
         
             //create the level select button
             SLCTextButtonNode *button = [[SLCTextButtonNode alloc] initWithImageNamed:@"green_button08"
-                                                                                       size:CGSizeMake(bgFrame.size.width  * 0.2,
-                                                                                                       bgFrame.size.height * 0.25)
-                                                                                       text:[NSString stringWithFormat:@"%i", i]];
-            button.position = CGPointMake((bgFrame.size.width / 3) * [posMod[i-1] integerValue], 0);
+                                                                                 size:CGSizeMake(bgFrame.size.width  * 0.27,
+                                                                                                 bgFrame.size.height * 0.27)
+                                                                                 text:[NSString stringWithFormat:@"%i", i]];
+            NSUInteger offset = 35;
+            switch (i)
+            {
+                case 1:
+                    button.position = CGPointMake(((bgFrame.size.width / 4) * -1) + offset, 25);
+                    break;
+                case 2:
+                    button.position = CGPointMake((bgFrame.size.width / 4) - offset, 25);
+                    break;
+                case 3:
+                    button.position = CGPointMake(((bgFrame.size.width / 4) * -1) + offset, -125);
+                    break;
+                case 4:
+                    button.position = CGPointMake((bgFrame.size.width / 4) - offset, -125);
+                    break;
+            }
+
+
             
             button.touchSound = @"button-fwd.caf";
             button.onTouch = ^{

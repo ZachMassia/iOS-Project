@@ -80,7 +80,7 @@
         // Update the current level in the data store.
         [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
-        [self runAction:self.sounds[[NSString stringWithFormat:@"Music0%i", self.level.level]]];
+        [self runAction:self.sounds[[NSString stringWithFormat:@"Music0%i", self.level.level > 3 ? 1 : self.level.level]]];
     }
     return self;
 }
@@ -260,9 +260,10 @@
     // Create a weak reference to self to avoid a retain cycle compiler warning.
     // Used for the button OnClick blocks.
     __unsafe_unretained typeof(self) weakSelf = self;
-    NSUInteger offset = 52;
+    NSUInteger offset = 55;
 
-    SLCButtonNode *button = [[SLCButtonNode alloc] initWithImageNamed:@"pause_btn" size:CGSizeMake(48, 48)];
+    SLCButtonNode *button = [[SLCButtonNode alloc] initWithImageNamed:@"pause_btn" size:CGSizeMake(55, 55)];
+    button.alpha = .9;
     button.name = @"Pause_BTN";
     button.position = CGPointMake(button.frame.size.width + offset,
                                   self.frame.size.height - button.frame.size.height - offset);
@@ -293,9 +294,10 @@
     // Create a weak reference to self to avoid a retain cycle compiler warning.
     // Used for the button OnClick blocks.
     __unsafe_unretained typeof(self) weakSelf = self;
-    NSUInteger offset = 85;
+    NSUInteger offset = 92;
 
-    SLCButtonNode *button = [[SLCButtonNode alloc] initWithImageNamed:@"jump_btn" size:CGSizeMake(64, 64)];
+    SLCButtonNode *button = [[SLCButtonNode alloc] initWithImageNamed:@"jump_btn" size:CGSizeMake(112, 112)];
+    button.alpha = 0.75;
     button.name = @"Jump_BTN";
     button.position = CGPointMake(self.frame.size.width - button.frame.size.width - offset,
                                   button.frame.size.height + offset);
@@ -321,7 +323,7 @@
 - (NSDictionary *)sounds{
     if(!_sounds){
         NSMutableDictionary *temp = [NSMutableDictionary dictionary];
-        NSArray *sounds = @[[NSString stringWithFormat:@"Music0%i.caf", self.level.level],
+        NSArray *sounds = @[[NSString stringWithFormat:@"Music0%i.caf", self.level.level > 3 ? 1 : self.level.level],
                             @"button-fwd.caf", @"button-back.caf", @"grav-down.caf", @"grav-up.caf"];
 
         // Load all the sounds as actions and use the file names without extensions as keys.

@@ -58,6 +58,7 @@
 		9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9241A2531907718F00E7F97A /* kenvector_future.ttf */; };
 		9241A25B1907A7C800E7F97A /* SLCButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241A25A1907A7C800E7F97A /* SLCButtonNode.m */; };
 		9241A25E190819FA00E7F97A /* SLCTextButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241A25D190819FA00E7F97A /* SLCTextButtonNode.m */; };
+		9241A260190871D300E7F97A /* level4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 9241A25F190871D300E7F97A /* level4.tmx */; };
 		927033B91901861900627EFF /* SLCGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 927033B81901861900627EFF /* SLCGameLevel.m */; };
 		927033BC1901D19C00627EFF /* JumpDustParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 927033BA1901D19B00627EFF /* JumpDustParticle.sks */; };
 		927033BD1901D19C00627EFF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 927033BB1901D19C00627EFF /* spark.png */; };
@@ -150,6 +151,7 @@
 		9241A25A1907A7C800E7F97A /* SLCButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCButtonNode.m; sourceTree = "<group>"; };
 		9241A25C190819FA00E7F97A /* SLCTextButtonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCTextButtonNode.h; sourceTree = "<group>"; };
 		9241A25D190819FA00E7F97A /* SLCTextButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCTextButtonNode.m; sourceTree = "<group>"; };
+		9241A25F190871D300E7F97A /* level4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level4.tmx; sourceTree = "<group>"; };
 		927033B71901861900627EFF /* SLCGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCGameLevel.h; sourceTree = "<group>"; };
 		927033B81901861900627EFF /* SLCGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCGameLevel.m; sourceTree = "<group>"; };
 		927033BA1901D19B00627EFF /* JumpDustParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = JumpDustParticle.sks; path = ../JumpDustParticle.sks; sourceTree = "<group>"; };
@@ -344,10 +346,10 @@
 		3FCB762B18EB1FA500FCCA6E /* TMX */ = {
 			isa = PBXGroup;
 			children = (
+				9241A25F190871D300E7F97A /* level4.tmx */,
 				3FCB762C18EB1FA500FCCA6E /* level1.tmx */,
 				3F33EF641906D68B00FEC331 /* level2.tmx */,
 				3F0CEFFF19083E5000B4E7EC /* level3.tmx */,
-				3F0EB44F19086A9C00EB5ACA /* level4.tmx */,
 				3F0CF00019083E5000B4E7EC /* star.png */,
 				3FCB762D18EB1FA500FCCA6E /* terrain_tiles.png */,
 				3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */,
@@ -482,7 +484,7 @@
 				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
 				3F9D66D91906EC9900E90112 /* Music02.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
-				3F0EB45019086A9C00EB5ACA /* level4.tmx in Resources */,
+				9241A260190871D300E7F97A /* level4.tmx in Resources */,
 				9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */,
 				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
