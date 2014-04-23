@@ -40,14 +40,9 @@
 
 @property (nonatomic, weak) SLCDataManager *dataMgr;
 
-/**
- *  The pause button.
- */
-@property (nonatomic, strong) SKLabelNode *pauseLabel;
 @end
 
 @implementation SLCGameScene
-
 
 - (id)initWithSize:(CGSize)size level:(NSUInteger)level {
     if (self = [super initWithSize:size]) {
@@ -64,6 +59,8 @@
 
         [self addChild:self.level.map];
 
+        [self createPauseButton];
+
         // Initialize the player.
         self.player = [[SLCPlayer alloc] init];
         self.player.velocity = CGPointMake(self.level.runSpeed, 0);
@@ -72,14 +69,6 @@
         [self.level addChild:self.player];
 
         self.gravDir = 1;
-        
-        self.pauseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        self.pauseLabel.name = @"Label1";
-        self.pauseLabel.text = @"Pause";
-        self.pauseLabel.fontSize = 20;
-        self.pauseLabel.position = CGPointMake(CGRectGetMidX(self.frame)*(2)-(35),
-                                            CGRectGetMidY(self.frame)+(250));
-        [self addChild:self.pauseLabel];
 
         // Update the current level in the data store.
         [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
@@ -111,7 +100,7 @@
     CGPoint location = [[touches anyObject] locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:@"Label1"]) {
+    if ([node.name isEqualToString:@"Pause_BTN"]) {
         SLCPauseScene *pauseScene = [[SLCPauseScene alloc] initWithSize:self.scene.size];
         pauseScene.scaleMode = SKSceneScaleModeAspectFill;
         pauseScene.otherScene = self;
@@ -257,6 +246,19 @@
         }
     }
     player.position = player.desiredPosition;
+}
+
+/**
+ *  Initialize the pause button node and add it to the scene.
+ */
+- (void)createPauseButton {
+    NSUInteger pauseBtnOffset = 7;
+
+    SKSpriteNode *pauseLabel = [SKSpriteNode spriteNodeWithImageNamed:@"pause_btn"];
+    pauseLabel.name = @"Pause_BTN";
+    pauseLabel.position = CGPointMake(pauseLabel.size.width + pauseBtnOffset,
+                                      self.frame.size.height - pauseLabel.size.height - pauseBtnOffset);
+    [self addChild:pauseLabel];
 }
 
 - (SLCDataManager *)dataMgr {
