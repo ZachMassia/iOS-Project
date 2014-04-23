@@ -10,6 +10,7 @@
 #import "SLCGameLevel.h"
 #import "SLCPlayer.h"
 #import "SLCPauseMenu.h"
+#import "SLCButtonNode.h"
 
 @interface SLCGameScene()
 /**
@@ -103,24 +104,6 @@
 
         if ([self isPlayerIntersectingLevelEnd]) {
             [self handleLevelComplete];
-        }
-    }
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGPoint location = [[touches anyObject] locationInNode:self];
-    SKNode *node = [self nodeAtPoint:location];
-
-    if (!self.pauseMenu.isVisible) {
-        if ([node.name isEqualToString:@"Pause_BTN"]) {
-            [self runAction:self.sounds[@"button-fwd"]];
-            [self.pauseMenu showWithFadeDuration:0.45];
-        }
-        else if (self.player.onGround && [node.name isEqualToString:@"Jump_BTN"]) {
-            self.gravDir *= -1;
-            [self.player flip];
-            [self runAction:self.sounds[self.player.upsideDown ? @"grav-up" : @"grav-down"]];
-            [node runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.25]];
         }
     }
 }
@@ -264,11 +247,19 @@
  *  Initialize the pause button node and add it to the scene.
  */
 - (void)createPauseButton {
-    NSUInteger offset = 10;
+    // Create a weak reference to self to avoid a retain cycle compiler warning.
+    // Used for the button OnClick blocks.
+    __unsafe_unretained typeof(self) weakSelf = self;
+    NSUInteger offset = 52;
 
-    SKSpriteNode *button = [SKSpriteNode spriteNodeWithImageNamed:@"pause_btn"];
+    SLCButtonNode *button = [[SLCButtonNode alloc] initWithImageNamed:@"pause_btn" size:CGSizeMake(48, 48)];
     button.name = @"Pause_BTN";
-    button.position = CGPointMake(button.size.width + offset, self.frame.size.height - button.size.height - offset);
+    button.position = CGPointMake(button.frame.size.width + offset,
+                                  self.frame.size.height - button.frame.size.height - offset);
+    button.onTouch = ^{
+        [weakSelf runAction:self.sounds[@"button-fwd"]];
+        [weakSelf.pauseMenu showWithFadeDuration:0.45];
+    };
     [self addChild:button];
 }
 
@@ -289,12 +280,24 @@
  *  Initialize the jump button node and add it to the scene.
  */
 - (void)createJumpButton {
-    NSUInteger offset = 10;
+    // Create a weak reference to self to avoid a retain cycle compiler warning.
+    // Used for the button OnClick blocks.
+    __unsafe_unretained typeof(self) weakSelf = self;
+    NSUInteger offset = 85;
 
-    SKSpriteNode *button = [SKSpriteNode spriteNodeWithImageNamed:@"jump_btn"];
+    SLCButtonNode *button = [[SLCButtonNode alloc] initWithImageNamed:@"jump_btn" size:CGSizeMake(64, 64)];
     button.name = @"Jump_BTN";
-    button.position = CGPointMake(self.frame.size.width - button.size.width - offset,
-                                  button.size.height + offset);
+    button.position = CGPointMake(self.frame.size.width - button.frame.size.width - offset,
+                                  button.frame.size.height + offset);
+    button.onTouch = ^{
+        if (weakSelf.player.onGround) {
+            weakSelf.gravDir *= -1;
+            [weakSelf.player flip];
+            [weakSelf runAction:weakSelf.sounds[weakSelf.player.upsideDown ? @"grav-up" : @"grav-down"]];
+            [[weakSelf childNodeWithName:@"Jump_BTN" ] runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f)
+                                                                                duration:0.25]];
+        }
+    };
     [self addChild:button];
 }
 
