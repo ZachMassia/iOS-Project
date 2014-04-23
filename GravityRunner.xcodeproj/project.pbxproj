@@ -52,6 +52,7 @@
 		9241A24E19073F1800E7F97A /* ui.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9241A24D19073F1800E7F97A /* ui.atlas */; };
 		9241A2541907718F00E7F97A /* kenpixel_blocks.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9241A2521907718F00E7F97A /* kenpixel_blocks.ttf */; };
 		9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9241A2531907718F00E7F97A /* kenvector_future.ttf */; };
+		9241A25B1907A7C800E7F97A /* SLCButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9241A25A1907A7C800E7F97A /* SLCButtonNode.m */; };
 		927033B91901861900627EFF /* SLCGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 927033B81901861900627EFF /* SLCGameLevel.m */; };
 		927033BC1901D19C00627EFF /* JumpDustParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 927033BA1901D19B00627EFF /* JumpDustParticle.sks */; };
 		927033BD1901D19C00627EFF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 927033BB1901D19C00627EFF /* spark.png */; };
@@ -134,6 +135,8 @@
 		9241A24D19073F1800E7F97A /* ui.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ui.atlas; sourceTree = "<group>"; };
 		9241A2521907718F00E7F97A /* kenpixel_blocks.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kenpixel_blocks.ttf; sourceTree = "<group>"; };
 		9241A2531907718F00E7F97A /* kenvector_future.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kenvector_future.ttf; sourceTree = "<group>"; };
+		9241A2591907A7C800E7F97A /* SLCButtonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCButtonNode.h; sourceTree = "<group>"; };
+		9241A25A1907A7C800E7F97A /* SLCButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCButtonNode.m; sourceTree = "<group>"; };
 		927033B71901861900627EFF /* SLCGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCGameLevel.h; sourceTree = "<group>"; };
 		927033B81901861900627EFF /* SLCGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCGameLevel.m; sourceTree = "<group>"; };
 		927033BA1901D19B00627EFF /* JumpDustParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = JumpDustParticle.sks; path = ../JumpDustParticle.sks; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				927D0D2219041626007E3255 /* SLCDataManager.m */,
 				92139F4718F8D6C000EF3680 /* SLCSpriteSheet.h */,
 				92139F4818F8D6C000EF3680 /* SLCSpriteSheet.m */,
+				9241A2591907A7C800E7F97A /* SLCButtonNode.h */,
+				9241A25A1907A7C800E7F97A /* SLCButtonNode.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 			files = (
 				3FCB75D418EB1C8300FCCA6E /* main.m in Sources */,
 				3FCB761F18EB1DD600FCCA6E /* SKTAudio.m in Sources */,
+				9241A25B1907A7C800E7F97A /* SLCButtonNode.m in Sources */,
 				3FCB762118EB1DD600FCCA6E /* SKTTimingFunctions.m in Sources */,
 				3FCB761B18EB1DD600FCCA6E /* SKAction+SKTSpecialEffects.m in Sources */,
 				3FCB762618EB1E4E00FCCA6E /* SLCPlayer.m in Sources */,

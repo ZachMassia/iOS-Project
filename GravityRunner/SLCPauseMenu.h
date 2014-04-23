@@ -15,6 +15,11 @@
  */
 @property (assign, nonatomic, readonly) BOOL isVisible;
 
+/**
+ *  An array of UI elements which should be hidden when the menu is shown.
+ */
+@property (strong, nonatomic) NSMutableArray *uiElementsToHide;
+
 - (id)initWithParentNode:(SKNode *)parent;
 
 /**

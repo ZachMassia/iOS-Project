@@ -110,16 +110,18 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     CGPoint location = [[touches anyObject] locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
-    
-    if ([node.name isEqualToString:@"Pause_BTN"]) {
-        [self runAction:self.sounds[@"button-fwd"]];
-        [self.pauseMenu showWithFadeDuration:0.45];
-    }
-    else if (self.player.onGround && [node.name isEqualToString:@"Jump_BTN"]) {
-        self.gravDir *= -1;
-        [self.player flip];
-        [self runAction:self.sounds[self.player.upsideDown ? @"grav-up" : @"grav-down"]];
-        [node runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.25]];
+
+    if (!self.pauseMenu.isVisible) {
+        if ([node.name isEqualToString:@"Pause_BTN"]) {
+            [self runAction:self.sounds[@"button-fwd"]];
+            [self.pauseMenu showWithFadeDuration:0.45];
+        }
+        else if (self.player.onGround && [node.name isEqualToString:@"Jump_BTN"]) {
+            self.gravDir *= -1;
+            [self.player flip];
+            [self runAction:self.sounds[self.player.upsideDown ? @"grav-up" : @"grav-down"]];
+            [node runAction:[SKAction rotateByAngle:180.0f * (M_PI / 180.0f) duration:0.25]];
+        }
     }
 }
 
@@ -276,6 +278,8 @@
         _pauseMenu.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         _pauseMenu.zPosition = 20;
         _pauseMenu.alpha = 0;
+        _pauseMenu.uiElementsToHide = (NSMutableArray *)@[[self childNodeWithName:@"Pause_BTN"],
+                                                          [self childNodeWithName:@"Jump_BTN"]];
         [self addChild:_pauseMenu];
     }
     return _pauseMenu;
