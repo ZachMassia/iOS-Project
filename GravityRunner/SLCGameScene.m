@@ -40,7 +40,10 @@
 
 @property (nonatomic, weak) SLCDataManager *dataMgr;
 
-@property (nonatomic, strong) SKLabelNode *myLabel;
+/**
+ *  The pause button.
+ */
+@property (nonatomic, strong) SKLabelNode *pauseLabel;
 @end
 
 @implementation SLCGameScene
@@ -70,14 +73,14 @@
 
         self.gravDir = 1;
         
-        self.myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        self.myLabel.name = @"Label1";
-        self.myLabel.text = @"Pause";
-        self.myLabel.fontSize = 20;
-        self.myLabel.position = CGPointMake(CGRectGetMidX(self.frame)*(2)-(35),
+        self.pauseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.pauseLabel.name = @"Label1";
+        self.pauseLabel.text = @"Pause";
+        self.pauseLabel.fontSize = 20;
+        self.pauseLabel.position = CGPointMake(CGRectGetMidX(self.frame)*(2)-(35),
                                             CGRectGetMidY(self.frame)+(250));
-        
-        [self addChild:self.myLabel];
+        [self addChild:self.pauseLabel];
+
         // Update the current level in the data store.
         [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
@@ -105,12 +108,9 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self];
+    CGPoint location = [[touches anyObject] locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    //if fire button touched, bring the rain
     if ([node.name isEqualToString:@"Label1"]) {
         SLCPauseScene *pauseScene = [[SLCPauseScene alloc] initWithSize:self.scene.size];
         pauseScene.scaleMode = SKSceneScaleModeAspectFill;
