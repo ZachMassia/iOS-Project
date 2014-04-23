@@ -9,7 +9,7 @@
 #import "SKTUtils.h"
 #import "SLCGameLevel.h"
 #import "SLCPlayer.h"
-#import "SLCPauseScene.h"
+#import "SLCPauseMenu.h"
 
 @interface SLCGameScene()
 /**
@@ -34,7 +34,15 @@
  */
 @property (nonatomic, assign) NSInteger gravDir;
 
+/**
+ *  The data manager. Used for saving game progress.
+ */
 @property (nonatomic, weak) SLCDataManager *dataMgr;
+
+/**
+ *  The pause menu node.
+ */
+@property (nonatomic, strong) SLCPauseMenu *pauseMenu;
 
 @end
 
@@ -83,13 +91,19 @@
         delta = 0.02;
     }
     self.previousUpdateTime = currentTime;
-    [self.player update:delta];
-    [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.level.walls];
-    [self setViewpointCenter:self.player.position];
-    self.player.gravDir = self.gravDir;
 
-    if ([self isPlayerIntersectingLevelEnd]) {
-        [self handleLevelComplete];
+    // Pause the map and any children when the pause menu is showing.
+    self.level.map.paused = self.pauseMenu.isVisible;
+
+    if (!self.pauseMenu.isVisible) {
+        [self.player update:delta];
+        [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.level.walls];
+        [self setViewpointCenter:self.player.position];
+        self.player.gravDir = self.gravDir;
+
+        if ([self isPlayerIntersectingLevelEnd]) {
+            [self handleLevelComplete];
+        }
     }
 }
 
@@ -98,15 +112,8 @@
     SKNode *node = [self nodeAtPoint:location];
     
     if ([node.name isEqualToString:@"Pause_BTN"]) {
-        SLCPauseScene *pauseScene = [[SLCPauseScene alloc] initWithSize:self.scene.size];
-        pauseScene.scaleMode = SKSceneScaleModeAspectFill;
-        pauseScene.otherScene = self;
-
-        // Because actions only happen on the next game loop, play the button
-        // sound on the pause scene.
-        [pauseScene runAction:self.sounds[@"button-fwd"]];
-
-        [self.scene.view presentScene: pauseScene];
+        [self runAction:self.sounds[@"button-fwd"]];
+        [self.pauseMenu showWithFadeDuration:0.45];
     }
     else if (self.player.onGround && [node.name isEqualToString:@"Jump_BTN"]) {
         self.gravDir *= -1;
@@ -261,6 +268,17 @@
     button.name = @"Pause_BTN";
     button.position = CGPointMake(button.size.width + offset, self.frame.size.height - button.size.height - offset);
     [self addChild:button];
+}
+
+- (SLCPauseMenu *)pauseMenu {
+    if (!_pauseMenu) {
+        _pauseMenu = [[SLCPauseMenu alloc] initWithParentNode:self];
+        _pauseMenu.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        _pauseMenu.zPosition = 20;
+        _pauseMenu.alpha = 0;
+        [self addChild:_pauseMenu];
+    }
+    return _pauseMenu;
 }
 
 /**
