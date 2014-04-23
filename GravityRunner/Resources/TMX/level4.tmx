@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="250" height="24" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="speed" value="400"/>
+ </properties>
+ <tileset firstgid="1" name="terrain_tiles" tilewidth="32" tileheight="32" margin="1">
+  <image source="terrain_tiles.png" width="512" height="1024"/>
+ </tileset>
+ <tileset firstgid="466" name="star" tilewidth="32" tileheight="32">
+  <image source="star.png" width="70" height="70"/>
+ </tileset>
+ <layer name="Background" width="250" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt08GNgVEUhuGrDDYszYYSBhFLQ2T6mU7QAErQialgpgWnhp+bk//meZI3Octvc0oBAAAAMhxKuWdvAOpa+3No3rc/h+Zt/DkANGccTbJHAFXNonn2CADgJctolT0CqGoX7bNHAFV9RovsEUBV2+grewQAANCMY3SKzh1uoB8u0TW6dbiBtg0HpYyi31J+HlH2HuD9pvHjH9F//PifPwcAoGeeShwg1A==
+  </data>
+ </layer>
+ <layer name="walls" width="250" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt2EFOwkAYxfFvxBPoCmKiS1gonkCbGHe6MS7VRLeC0bWa9B56Ar0EN9ET6AIO4CPGSKDRQmfoQP+/5OUltAOk6fCRmlXTprKV0QCWx47SzmggVjVldYYGsDjWlPUZGsByOzHrlf0dAIR1EGif15z1VpSW0sxoHUt0ThLis0PhGR0W1WmgfT7Q+/aVhvZ03U22jiU6Jwnx2aHwjA6L6pD/7QAAAAAAAABKcu3MOkpXufmnt52lx2a9I4XO7ktd0yvlSXnO0To31Rqua8b1OythPyyrPe3fe+VBeczR+Nutcqe8KK85WuemWpOW8mUj1FG69nt94Edbe3fX5W8gpHPlomBj0nCe77v8DYT0M8+L9FBd92rD+emNKe77gf6b9ZXx9+l/HysN8xwx8TXPm7pXW85f51Vzlq4o4+v12vBYaZjniImvee7j92K0p1V0vW/Mc8TE1zz38Xsx2tMqut435jliUrV5/qa82+zPD/JiniMmVZvnH8qnhX9uwDxHTKo2z+eFeY6YVG2ezwvzHDHxNc+/AKcidbk=
+  </data>
+ </layer>
+ <layer name="traps" width="250" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt2rENgDAMRcHsvxE0UEIDK+ER4sRIIN1JX6/yBm4NAAAAAAAAAAAAAAAA+i2xNVngX47YmSwAAAAAAAAA8I4ttic6e1/drJH/JNXeftUVuxOdva9u1sh/kmpvqzyI3j1B
+  </data>
+ </layer>
+ <objectgroup name="objects" width="250" height="24">
+  <object name="complete" x="7909" y="100" width="54" height="89"/>
+  <object name="spawn" x="8" y="398" width="62" height="102"/>
+ </objectgroup>
+</map>

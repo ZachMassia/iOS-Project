@@ -344,10 +344,11 @@
 		3FCB762B18EB1FA500FCCA6E /* TMX */ = {
 			isa = PBXGroup;
 			children = (
-				3F0CEFFF19083E5000B4E7EC /* level3.tmx */,
-				3F0CF00019083E5000B4E7EC /* star.png */,
-				3F33EF641906D68B00FEC331 /* level2.tmx */,
 				3FCB762C18EB1FA500FCCA6E /* level1.tmx */,
+				3F33EF641906D68B00FEC331 /* level2.tmx */,
+				3F0CEFFF19083E5000B4E7EC /* level3.tmx */,
+				3F0EB44F19086A9C00EB5ACA /* level4.tmx */,
+				3F0CF00019083E5000B4E7EC /* star.png */,
 				3FCB762D18EB1FA500FCCA6E /* terrain_tiles.png */,
 				3FCB762E18EB1FA500FCCA6E /* terrain_tiles@2x.png */,
 			);
@@ -481,6 +482,7 @@
 				3F0BD4E518FF120A001A57D7 /* button-fwd.caf in Resources */,
 				3F9D66D91906EC9900E90112 /* Music02.caf in Resources */,
 				9222495018FCFCB7003B64F2 /* walk_anim.atlas in Resources */,
+				3F0EB45019086A9C00EB5ACA /* level4.tmx in Resources */,
 				9241A2551907718F00E7F97A /* kenvector_future.ttf in Resources */,
 				3F0BD4E018FF1104001A57D7 /* Music01.caf in Resources */,
 				3FCB763318EB1FA500FCCA6E /* terrain_tiles@2x.png in Resources */,
