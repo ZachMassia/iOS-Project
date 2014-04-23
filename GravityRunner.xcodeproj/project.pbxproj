@@ -132,8 +132,8 @@
 		9241A24D19073F1800E7F97A /* ui.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ui.atlas; sourceTree = "<group>"; };
 		927033B71901861900627EFF /* SLCGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCGameLevel.h; sourceTree = "<group>"; };
 		927033B81901861900627EFF /* SLCGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCGameLevel.m; sourceTree = "<group>"; };
-		927033BA1901D19B00627EFF /* JumpDustParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JumpDustParticle.sks; sourceTree = "<group>"; };
-		927033BB1901D19C00627EFF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		927033BA1901D19B00627EFF /* JumpDustParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = JumpDustParticle.sks; path = ../JumpDustParticle.sks; sourceTree = "<group>"; };
+		927033BB1901D19C00627EFF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 		927D0D2119041626007E3255 /* SLCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCDataManager.h; sourceTree = "<group>"; };
 		927D0D2219041626007E3255 /* SLCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,8 +224,6 @@
 				927033B81901861900627EFF /* SLCGameLevel.m */,
 				3FCB762418EB1E4E00FCCA6E /* SLCPlayer.h */,
 				3FCB762518EB1E4E00FCCA6E /* SLCPlayer.m */,
-				927033BA1901D19B00627EFF /* JumpDustParticle.sks */,
-				927033BB1901D19C00627EFF /* spark.png */,
 				3FCB75CE18EB1C8300FCCA6E /* Supporting Files */,
 			);
 			path = GravityRunner;
@@ -302,6 +300,8 @@
 		3FCB762718EB1FA500FCCA6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				927033BA1901D19B00627EFF /* JumpDustParticle.sks */,
+				927033BB1901D19C00627EFF /* spark.png */,
 				3F0BD4D418FF09C0001A57D7 /* Sounds */,
 				3FCB762818EB1FA500FCCA6E /* Images */,
 				3FCB762B18EB1FA500FCCA6E /* TMX */,
