@@ -11,6 +11,7 @@
 #import "SLCPlayer.h"
 #import "SLCPauseMenu.h"
 #import "SLCButtonNode.h"
+#import <math.h>
 
 @interface SLCGameScene()
 /**
@@ -173,6 +174,8 @@
             player.position = self.level.spawnLocation.origin;
             player.velocity = CGPointMake(player.velocity.x, 0);
             [player runAction:[SKAction rotateToAngle:0 duration:0]];
+            self.gravDir = 1;
+            self.player.xScale = fabsf(self.player.xScale);
             player.onGround = YES;
             return;
         }
