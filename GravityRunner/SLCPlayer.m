@@ -43,7 +43,7 @@
     self.velocity = CGPointAdd(self.velocity, gravityStep);
     
     static const CGPoint minMovement = { 0.0, -510.0 };
-    static const CGPoint maxMovement = { 215.0, 510.0 };
+    static const CGPoint maxMovement = { 500.0, 510.0 };
     
     self.velocity = CGPointMake(Clamp(self.velocity.x, minMovement.x, maxMovement.x),
                                 Clamp(self.velocity.y, minMovement.y, maxMovement.y));
