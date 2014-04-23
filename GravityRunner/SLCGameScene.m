@@ -171,12 +171,19 @@
         CGPoint playerCoord = [layer coordForPoint:player.desiredPosition];
 
         if ([self isPlayerOutOfBounds:player forLayer:layer]) {
+            // Reset the player
             player.position = self.level.spawnLocation.origin;
             player.velocity = CGPointMake(player.velocity.x, 0);
             [player runAction:[SKAction rotateToAngle:0 duration:0]];
-            self.gravDir = 1;
             self.player.xScale = fabsf(self.player.xScale);
             player.onGround = YES;
+
+            // Bring gravity back to normal
+            self.gravDir = 1;
+
+            // Reset the jump button to point up, so that it stays in sync with the player.
+            [[self childNodeWithName:@"Jump_BTN"] runAction:[SKAction rotateToAngle:0 duration:0]];
+
             return;
         }
         
