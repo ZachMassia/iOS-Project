@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="250" height="24" tilewidth="32" tileheight="32">
  <properties>
-  <property name="speed" value="400"/>
+  <property name="speed" value="345"/>
  </properties>
  <tileset firstgid="1" name="terrain_tiles" tilewidth="32" tileheight="32" margin="1">
   <image source="terrain_tiles.png" width="512" height="1024"/>
@@ -21,12 +21,12 @@
  </layer>
  <layer name="traps" width="250" height="24">
   <data encoding="base64" compression="zlib">
-   eJzt2V1Kw1AQhuGzvboCu1St0Lm0CvY62gW0ugk/kMChRPI/c5K8Dwwf9ORioOePJCUAAAAAAAAAAAAAW/ap+lJdst+qLJvGU8M4gDJdVTfVt+pnhnEA8bQ2TWvUtFZNa9amHgdQBt25TXdvq7J1qju61fXfeJ31uHffGO5J9dwjPb1qLp1UeTq3AKyC1k469UhP2ltMe4vl6dwCsAr352VbRvcLoL/787Ito/sFEGOneohuAsCsHlX76CYAFK/re/3obwAAhuv6Xj/6G8DUjunvpccSs4QeSHLMnPXyoTovNEvogSTHzFkvB9XLQrOEHkhyzJz18qZ6X2iW0ANJjpmzXkrY44bsiVs/z9ueie6P5DyfYk/c+nne9kx0f2S3/+0XN2yYKA==
+   eJzt2UsKwjAUheFuT1egK/UJZmgVdGx1AT424QEp1IH0kTY3qf8Hl4PQwQVzk5JmGQAAAAAAAAAAAAB8u1SyUF1VN7t2AAzornqonqqXcS8AhqHZdppxp1l3mnln3Q+A/ugd3ZWld3ZXMOOjslKtW2RIe621XFXNwC0Ao6DZyfIWGZL2Fqe9xVUzcAvAKJTzs1QtKvP067d1vwAAYBgT1dS6CQCDmqnm1k0AiF7Te33rbwAAumt6r2/9DaBvu+xzuZlixtADSfqs2VBOqnOiGUMPJOmzZkPZqLaJZgw9kKTPmg3loDommjH0QJI+azaUGPa4Lnviv5/ndc9Y90dynvexJ/77eV73jHV/ZLP/7Q1a4V8r
   </data>
  </layer>
  <layer name="item" width="250" height="24">
   <data encoding="base64" compression="zlib">
-   eJzt17ENwCAMBECz/3aB7BMmAIkCk+Su/c7SS+8IAAAAAAAAAOBPrhJRy3oOnK/1Dt+DHs9yAADO5F+D7/OvAfA2Nmou92cHGzWX+wMAAAAAAABAngd83BCb
+   eJzt1okJACAMA8B2/+189tEltAp3E4RAIBEAAAAAAAAAAAAAALyuZUTP6hTASWNvfNo5AB/xUWvpnxt81Fr6BwAAAAAAAIA6C/pgCfc=
   </data>
  </layer>
  <layer name="foreground" width="250" height="24">
