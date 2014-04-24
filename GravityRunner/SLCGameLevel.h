@@ -29,6 +29,11 @@
 @property (nonatomic, strong) TMXLayer  *walls;
 
 /**
+ *  The trap layer of the current map. This is the layer that kills the player.
+ */
+@property (nonatomic, strong) TMXLayer *traps;
+
+/**
  *  The object layer of the current map. Used for collectables, spawn points, etc.
  */
 @property (nonatomic, strong) TMXObjectGroup *objectLayer;

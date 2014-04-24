@@ -28,4 +28,9 @@
  *  @return The initialized scene.
  */
 - (id)initWithSize:(CGSize)size level:(NSUInteger)level;
+
+/**
+ *  Stops the background music if it is playing.
+ */
+- (void)stopBackgroundMusic;
 @end

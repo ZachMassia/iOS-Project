@@ -8,6 +8,8 @@
 
 #import "SLCPauseMenu.h"
 #import "SLCTextButtonNode.h"
+#import "SLCGameScene.h"
+#import "SLCLevelSelectMenu.h"
 
 @interface SLCPauseMenu()
 
@@ -20,7 +22,7 @@
 
 @implementation SLCPauseMenu
 
--(id)initWithParentNode:(SKNode *)parent {
+-(id)initWithParentNode:(SLCGameScene *)parent {
     if (self = [super init]) {
         self.isVisible = NO;
         self.uiElementsToHide = [NSMutableArray array];
@@ -61,10 +63,16 @@
                                                                             bgFrame.size.height * 0.18)
                                                             text:@"Quit"];
         self.quitBtn.position = CGPointMake(-95, -75);
-        self.quitBtn.touchSound = @"button-fwd.caf";
         self.quitBtn.onTouch = ^{
-            // TODO: This should quit to level select.
-            [weakSelf hideWithFadeDuration:0.25];
+            SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:1];
+
+            SKScene *levelSelect = [[SLCLevelSelectMenu alloc] initWithSize:weakSelf.scene.size];
+            levelSelect.scaleMode = SKSceneScaleModeAspectFill;
+
+            [levelSelect runAction:[SKAction playSoundFileNamed:@"button-fwd.caf" waitForCompletion:NO]];
+
+            [parent stopBackgroundMusic];
+            [parent.view presentScene:levelSelect transition:transition];
         };
 
         // Add the buttons to the menu.

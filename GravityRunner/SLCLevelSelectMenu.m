@@ -59,15 +59,16 @@
                     break;
             }
 
-
-            
-            button.touchSound = @"button-fwd.caf";
             button.onTouch = ^{
+                SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1];
+
                 SKScene *scene = [[SLCGameScene alloc] initWithSize:weakSelf.scene.size level:i];
                 scene.scaleMode = SKSceneScaleModeAspectFill;
+
+                [scene runAction:[SKAction playSoundFileNamed:@"button-fwd.caf" waitForCompletion:NO]];
                 
                 // Present the scene.
-                [weakSelf.view presentScene:scene];
+                [weakSelf.view presentScene:scene transition:transition];
             };
             
             [self addChild:button];

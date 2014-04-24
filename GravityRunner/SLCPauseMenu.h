@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@class SLCGameScene;
+
 @interface SLCPauseMenu : SKNode
 
 /**
@@ -20,7 +22,7 @@
  */
 @property (strong, nonatomic) NSMutableArray *uiElementsToHide;
 
-- (id)initWithParentNode:(SKNode *)parent;
+- (id)initWithParentNode:(SLCGameScene *)parent;
 
 /**
  *  Hide the menu by fading it out.

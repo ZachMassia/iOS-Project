@@ -40,13 +40,16 @@
                                                                                   bgFrame.size.height * 0.25)
                                                                   text:@"Level Select"];
         lvlSelectBtn.position = CGPointMake(0, 80);
-        lvlSelectBtn.touchSound = @"button-fwd.caf";
         lvlSelectBtn.onTouch = ^{
+            SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1];
+
             SKScene *scene = [[SLCLevelSelectMenu alloc] initWithSize:weakSelf.scene.size];
             scene.scaleMode = SKSceneScaleModeAspectFill;
-            
+
+            [scene runAction:[SKAction playSoundFileNamed:@"button-fwd.caf" waitForCompletion:NO]];
+
             // Present the scene.
-            [weakSelf.view presentScene:scene];
+            [weakSelf.view presentScene:scene transition:transition];
         };
         
         //create the Credits button
@@ -55,7 +58,6 @@
                                                                                                    bgFrame.size.height * 0.2)
                                                                                    text:@"Credits"];
         creditsBtn.position = CGPointMake(0, -10);
-        creditsBtn.touchSound = @"button-fwd.caf";
         creditsBtn.onTouch = ^{
             
         };

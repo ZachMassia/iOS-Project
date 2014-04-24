@@ -27,7 +27,7 @@
 
 - (JSTileMap *)map {
     if (!_map) {
-        _map = [JSTileMap mapNamed:[NSString stringWithFormat:@"level%i.tmx", self.level]];
+        _map = [JSTileMap mapNamed:[NSString stringWithFormat:@"level%lu.tmx", (unsigned long)self.level]];
     }
     return _map;
 }
@@ -37,6 +37,13 @@
         _walls = [self.map layerNamed:@"walls"];
     }
     return _walls;
+}
+
+- (TMXLayer *)traps {
+    if (!_traps) {
+        _traps = [self.map layerNamed:@"traps"];
+    }
+    return _traps;
 }
 
 - (TMXObjectGroup *)objectLayer {

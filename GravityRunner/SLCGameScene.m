@@ -117,10 +117,12 @@
  *  Ran once when the player completes the level.
  */
 - (void)handleLevelComplete {
+    SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:1];
+
     SKScene *levelSelect = [[SLCLevelSelectMenu alloc] initWithSize:self.scene.size];
     levelSelect.scaleMode = SKSceneScaleModeAspectFill;
     [self.bgSound stop];
-    [self.view presentScene:levelSelect];
+    [self.view presentScene:levelSelect transition:transition];
 }
 
 /**
@@ -163,8 +165,26 @@
     return [layer.layerInfo tileGidAtCoord:coord];
 }
 
+
+
+- (void)handleOutOfBoundsOrTraps {
+    // Reset the player
+    self.player.position = self.level.spawnLocation.origin;
+    self.player.velocity = CGPointMake(self.player.velocity.x, 0);
+    [self.player removeActionForKey:@"flip_animation"];
+    [self.player runAction:[SKAction rotateToAngle:0 duration:0]];
+    self.player.xScale = fabsf(self.player.xScale);
+    self.player.onGround = YES;
+
+    // Bring gravity back to normal
+    self.gravDir = 1;
+
+    // Reset the jump button to point up, so that it stays in sync with the player.
+    [[self childNodeWithName:@"Jump_BTN"] runAction:[SKAction rotateToAngle:0 duration:0]];
+}
+
 - (void)checkForAndResolveCollisionsForPlayer:(SLCPlayer *)player forLayer:(TMXLayer *)layer {
-    NSInteger indicies[8] = {7, 1, 3, 5, 0, 2, 6, 8};
+    static const NSInteger indicies[8] = {7, 1, 3, 5, 0, 2, 6, 8};
     player.onGround = NO;
     for (NSUInteger i = 0; i < 8; i++) {
         NSInteger tileIndex = indicies[i];
@@ -174,19 +194,7 @@
         CGPoint playerCoord = [layer coordForPoint:player.desiredPosition];
 
         if ([self isPlayerOutOfBounds:player forLayer:layer]) {
-            // Reset the player
-            player.position = self.level.spawnLocation.origin;
-            player.velocity = CGPointMake(player.velocity.x, 0);
-            [player runAction:[SKAction rotateToAngle:0 duration:0]];
-            self.player.xScale = fabsf(self.player.xScale);
-            player.onGround = YES;
-
-            // Bring gravity back to normal
-            self.gravDir = 1;
-
-            // Reset the jump button to point up, so that it stays in sync with the player.
-            [[self childNodeWithName:@"Jump_BTN"] runAction:[SKAction rotateToAngle:0 duration:0]];
-
+            [self handleOutOfBoundsOrTraps];
             return;
         }
         
@@ -194,7 +202,13 @@
         NSInteger tileRow = tileIndex / 3;
         
         CGPoint tileCoord = CGPointMake(playerCoord.x + (tileColumn - 1), playerCoord.y + (tileRow - 1));
-        
+
+        NSInteger trapGID = [self tileGIDAtTileCoord:tileCoord forLayer:self.level.traps];
+        if (trapGID) {
+            [self handleOutOfBoundsOrTraps];
+            return;
+        }
+
         NSInteger gid = [self tileGIDAtTileCoord:tileCoord forLayer:layer];
         if (gid) {
             CGRect tileRect = [self tileRectFromTileCoords:tileCoord];
@@ -329,6 +343,10 @@
                                       self.level.level > 3 ? 1 : self.level.level]];
     }
     return _bgSound;
+}
+
+- (void)stopBackgroundMusic {
+    [self.bgSound stop];
 }
 
 - (NSDictionary *)sounds{
