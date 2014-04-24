@@ -11,6 +11,8 @@
 #import "SLCPlayer.h"
 #import "SLCPauseMenu.h"
 #import "SLCButtonNode.h"
+#import "SLCLevelSelectMenu.h"
+#import <SoundManager/SoundManager.h>
 #import <math.h>
 
 @interface SLCGameScene()
@@ -46,6 +48,8 @@
  */
 @property (nonatomic, strong) SLCPauseMenu *pauseMenu;
 
+@property (nonatomic, strong) Sound *bgSound;
+
 @end
 
 @implementation SLCGameScene
@@ -80,7 +84,7 @@
         // Update the current level in the data store.
         [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
-        [self runAction:self.sounds[[NSString stringWithFormat:@"Music0%i", self.level.level > 3 ? 1 : self.level.level]]];
+        [self.bgSound play];
     }
     return self;
 }
@@ -113,11 +117,10 @@
  *  Ran once when the player completes the level.
  */
 - (void)handleLevelComplete {
-    SKLabelNode *finishLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    finishLabel.text = @"Level Complete!";
-    finishLabel.fontSize = 50;
-    finishLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    [self addChild:finishLabel];
+    SKScene *levelSelect = [[SLCLevelSelectMenu alloc] initWithSize:self.scene.size];
+    levelSelect.scaleMode = SKSceneScaleModeAspectFill;
+    [self.bgSound stop];
+    [self.view presentScene:levelSelect];
 }
 
 /**
@@ -318,6 +321,14 @@
         _dataMgr = [SLCDataManager sharedInstance];
     }
     return _dataMgr;
+}
+
+- (Sound *)bgSound {
+    if (!_bgSound) {
+        _bgSound = [Sound soundNamed:[NSString stringWithFormat:@"Music0%i.caf",
+                                      self.level.level > 3 ? 1 : self.level.level]];
+    }
+    return _bgSound;
 }
 
 - (NSDictionary *)sounds{

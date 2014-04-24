@@ -1,0 +1,10 @@
+PODS:
+  - SoundManager (1.4.1)
+
+DEPENDENCIES:
+  - SoundManager (~> 1.4.1)
+
+SPEC CHECKSUMS:
+  SoundManager: 70ca8a12b24e451b0b8932721f2e46512a5fb605
+
+COCOAPODS: 0.32.1

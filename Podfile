@@ -1,0 +1,1 @@
+pod "SoundManager", "~> 1.4.1"

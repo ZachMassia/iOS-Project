@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F6A7F561-3570-49CD-9DFD-D3381EBAABE0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GravityRunner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FC1CBF51-3798-44B9-B3D6-9CBA8798B66C</key>
+		<string>https://github.com/ZachMassia/iOS-Project.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GravityRunner.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FC1CBF51-3798-44B9-B3D6-9CBA8798B66C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ZachMassia/iOS-Project.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FC1CBF51-3798-44B9-B3D6-9CBA8798B66C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FC1CBF51-3798-44B9-B3D6-9CBA8798B66C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Project</string>
+		</dict>
+	</array>
+</dict>
+</plist>
