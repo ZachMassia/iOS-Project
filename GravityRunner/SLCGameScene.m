@@ -81,8 +81,6 @@
 
         self.gravDir = 1;
 
-        // Update the current level in the data store.
-        [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:level] forKey:@"current-level"];
 
         [self.bgSound play];
     }
@@ -103,13 +101,14 @@
 
     if (!self.pauseMenu.isVisible) {
         [self.player update:delta];
-        [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.level.walls];
-        [self setViewpointCenter:self.player.position];
-        self.player.gravDir = self.gravDir;
 
         if ([self isPlayerIntersectingLevelEnd]) {
             [self handleLevelComplete];
         }
+
+        [self checkForAndResolveCollisionsForPlayer:self.player forLayer:self.level.walls];
+        [self setViewpointCenter:self.player.position];
+        self.player.gravDir = self.gravDir;
     }
 }
 
@@ -117,12 +116,16 @@
  *  Ran once when the player completes the level.
  */
 - (void)handleLevelComplete {
-    SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:1];
+    // Update the current level in the data store.
+    [self.dataMgr.data setValue:[NSNumber numberWithUnsignedInteger:self.level.level + 1] forKey:@"current-level"];
+    [self.dataMgr saveData];
+
+    //SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionRight duration:1];
 
     SKScene *levelSelect = [[SLCLevelSelectMenu alloc] initWithSize:self.scene.size];
     levelSelect.scaleMode = SKSceneScaleModeAspectFill;
     [self.bgSound stop];
-    [self.view presentScene:levelSelect transition:transition];
+    [self.view presentScene:levelSelect];// transition:transition];
 }
 
 /**

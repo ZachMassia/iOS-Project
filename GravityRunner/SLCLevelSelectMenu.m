@@ -42,6 +42,14 @@
                                                                                  size:CGSizeMake(bgFrame.size.width  * 0.27,
                                                                                                  bgFrame.size.height * 0.27)
                                                                                  text:[NSString stringWithFormat:@"%i", i]];
+
+            if ([[SLCDataManager sharedInstance].data[@"current-level"] integerValue] >= i || i == 1) {
+                button.alpha = 1;
+            } else {
+                button.alpha = 0.4;
+            }
+
+
             NSUInteger offset = 35;
             switch (i)
             {
@@ -60,6 +68,7 @@
             }
 
             button.onTouch = ^{
+
                 SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1];
 
                 SKScene *scene = [[SLCGameScene alloc] initWithSize:weakSelf.scene.size level:i];

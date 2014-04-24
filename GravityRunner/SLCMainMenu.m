@@ -37,9 +37,9 @@
         //create the level select button
         SLCTextButtonNode *lvlSelectBtn = [[SLCTextButtonNode alloc] initWithImageNamed:@"green_button08"
                                                                   size:CGSizeMake(bgFrame.size.width  * 0.8,
-                                                                                  bgFrame.size.height * 0.25)
+                                                                                  bgFrame.size.height * 0.27)
                                                                   text:@"Level Select"];
-        lvlSelectBtn.position = CGPointMake(0, 80);
+        lvlSelectBtn.position = CGPointMake(0, 50);
         lvlSelectBtn.onTouch = ^{
             SKTransition *transition = [SKTransition revealWithDirection:SKTransitionDirectionLeft duration:1];
 
@@ -53,16 +53,17 @@
         };
         
         //create the Credits button
-        SLCTextButtonNode *creditsBtn = [[SLCTextButtonNode alloc] initWithImageNamed:@"green_button08"
+        SLCTextButtonNode *creditsBtn = [[SLCTextButtonNode alloc] initWithImageNamed:@"red_button08"
                                                                                    size:CGSizeMake(bgFrame.size.width  * 0.8,
-                                                                                                   bgFrame.size.height * 0.2)
-                                                                                   text:@"Credits"];
-        creditsBtn.position = CGPointMake(0, -10);
+                                                                                                   bgFrame.size.height * 0.22)
+                                                                                   text:@"Reset Progress"];
+        creditsBtn.position = CGPointMake(0, -70);
         creditsBtn.onTouch = ^{
-            
+            [SLCDataManager sharedInstance].data[@"current-level"] = @"1";
+            [[SLCDataManager sharedInstance] saveData];
         };
         
-        // Create the quit button.
+        /*// Create the quit button.
         SLCTextButtonNode *quitBtn = [[SLCTextButtonNode alloc] initWithImageNamed:@"red_button08"
                                                                 size:CGSizeMake(bgFrame.size.width  * 0.8,
                                                                                 bgFrame.size.height * 0.2)
@@ -71,10 +72,10 @@
         quitBtn.touchSound = @"button-fwd.caf";
         quitBtn.onTouch = ^{
             
-        };
+        };*/
         [self addChild:lvlSelectBtn];
         [self addChild:creditsBtn];
-        [self addChild:quitBtn];
+//        [self addChild:quitBtn];
     }
     return self;
 }
